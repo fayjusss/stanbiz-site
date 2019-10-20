@@ -1,5 +1,6 @@
 import React from 'react';
-import { graphql, Link, StaticQuery } from 'gatsby';
+import { graphql, StaticQuery } from 'gatsby';
+import ifa from '../images/ifa.jpg';
 
 const Footer = props => (
   <div className="footer-strip">
@@ -10,19 +11,7 @@ const Footer = props => (
             <h3 className="footer-title">{props.data.site.siteMetadata.title}</h3>
             <ul className="footer-menu">
               <li>
-                {' '}
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                {' '}
-                <Link to="/contact">Contact</Link>
-              </li>
-              <li className="copyright">
-                ©
-{' '}
-{new Date().getFullYear()}
-{' '}
-{props.data.site.siteMetadata.title}
+                <img alt="ifa" src={ifa} /> 
               </li>
             </ul>
           </div>

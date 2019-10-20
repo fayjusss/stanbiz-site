@@ -47,6 +47,10 @@
         font-weight: bold;
         color: #ffffff;
       }
+      img {
+        width: 300px;
+        height: auto;
+      }
     }
     @include media-breakpoint-up(sm) {
       height: inherit;
