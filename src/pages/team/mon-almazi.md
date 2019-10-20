@@ -1,12 +1,12 @@
 ---
-path: '/team/sage-kirk'
-title: 'Sage Kirk'
-date: 2018-11-19T10:47:58+10:00
+path: '/team/mon-almazi'
+title: 'Mohammad Mon Almazi Mon'
+order: 2
 draft: false
-image: '/team/sage-kirk-485982-unsplash.jpg'
-jobtitle: 'Accountant'
-email: 'sage@test.com'
-linkedinurl: 'www.linkedin.com/sagekirk21'
+image: '/team/mon_almazi.jpg'
+jobtitle: 'Director'
+email: 'mon.almazi@test.com'
+linkedinurl: 'https://www.linkedin.com/in/mohammad-mon-almazi-mon-05403759/'
 weight: 2
 ---
 
