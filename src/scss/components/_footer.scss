@@ -7,10 +7,10 @@
   display: flex;
   justify-content: space-between;
   flex-direction: column;
-  align-items: flex-start;
+  align-items: center;
   
   img {
-    width: 20%;
+    width: 45%;
     padding-bottom: 20px;
     height: fixed;
   }
@@ -21,7 +21,7 @@
     align-items: center;
 
     img {
-      width: 10%;
+      width: 15%;
       height: fixed;
     }
   }
