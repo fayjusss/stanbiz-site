@@ -45,6 +45,7 @@ export default props => (
       query {
         site {
           siteMetadata {
+            title
             contact {
               email
               phone
