@@ -10,7 +10,7 @@ const Service = ({ data }) => {
     <Layout bodyClass="page-service">
       <SEO title={title} />
       <div className="strip strip-white strip-diagonal">
-        <div className="container pt-4 pt-md-10">
+        <div className="container pt-10 pt-md-10 pb-20 pb-md-20">
           <div className="row justify-content-start">
             <div className="col-12 col-md-8">
               <div className="service service-single">

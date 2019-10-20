@@ -16,6 +16,16 @@ const Call = props => (
           {props.data.site.siteMetadata.contact.email}
         </a>
       </div>
+      <div className="call-fb">
+        <strong>Facebook: </strong>
+        <a href={`${props.data.site.siteMetadata.contact.fb}`}>
+          {props.data.site.siteMetadata.contact.fb}
+        </a>
+      </div>
+      <div className="call-skype">
+        <strong>Skype: </strong>
+        {props.data.site.siteMetadata.contact.skype}
+      </div>
     </div>
     {props.button && (
       <div className="call-box-bottom">
@@ -38,6 +48,8 @@ export default props => (
             contact {
               email
               phone
+              fb
+              skype
             }
           }
         }

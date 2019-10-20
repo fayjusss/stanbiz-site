@@ -1,18 +1,26 @@
 .page-services {
-  background-image: url('../images/undraw_businesswoman_pc12.svg');
+  background-image: url('../images/undraw_finance_0bdk.svg');
   background-repeat: no-repeat;
-  background-size: 115%;
-  background-position: 49px -40px;
+  background-size: 70%;
+  background-position: 100% 60px;
   @include media-breakpoint-up(sm) {
-    background-size: 90%;
-    background-position: 159px -40px;
+    background-size: 50%;
+    background-position: 100% 80px;
   }
   @include media-breakpoint-up(md) {
-    background-size: 85%;
-    background-position: 199px -80px;
+    background-size: 50%;
+    background-position: 100% 80px;
   }
   @include media-breakpoint-up(lg) {
     background-size: 40%;
-    background-position: 100% 50px;
+    background-position: 100% 80px;
+  }
+  @include media-breakpoint-up(lg) {
+    background-size: 40%;
+    background-position: 100% 80px;
+  }
+  @include media-breakpoint-up(xl) {
+    background-size: 30%;
+    background-position: 100% 80px;
   }
 }

@@ -42,7 +42,7 @@ export const query = graphql`
   query ServicesQuery {
     allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/services/" } }
-      sort: { fields: [frontmatter___order], order: DESC }
+      sort: { fields: [frontmatter___order], order: ASC }
     ) {
       edges {
         node {

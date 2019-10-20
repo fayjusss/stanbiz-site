@@ -36,7 +36,6 @@ const Home = (props) => {
           {markdown.map(edge => (
             <div key={edge.node.frontmatter.path} className="col-12 col-md-6 col-lg-4 mb-2">
               <div className="feature">
-                {console.log(edge.node)}
                 {edge.node.frontmatter.image && (
                   <div className="feature-image">
                     <img src={withPrefix(edge.node.frontmatter.image)} />

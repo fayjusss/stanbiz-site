@@ -6,6 +6,47 @@
   @include media-breakpoint-up(sm) {
     background-size: 90%;
     background-position: 159px -40px;
+    blockquote {
+      width: 50%;
+      p {
+        width: 100%;
+        margin-bottom: 0;
+      }
+      .quotation {
+        font-size: 30px;
+        //margin: 0 auto;
+        quotes: "\201C""\201D""\2018""\2019";
+        padding: 10px 20px 0px;
+        line-height: 1.4;
+      }
+      
+      .quotation:before {
+        content: open-quote;
+        display: inline;
+        line-height: 0;
+        left: -10px;
+        position: relative;
+        top: 30px;
+        color: #ccc;
+        font-size: 3em;
+      }
+      .quotation::after {
+        content: close-quote;
+        display: inline;
+        line-height: 0;
+        left: 10px;
+        position: relative;
+        top: 35px;
+        color: #ccc;
+        font-size: 3em;
+      }
+      footer {
+        margin:0;
+        text-align: right;
+        font-size: 1.5em;
+        font-style: italic;
+      }
+    }
   }
   @include media-breakpoint-up(md) {
     background-size: 70%;
@@ -15,46 +56,4 @@
     background-size: 40%;
     background-position: 100% 50px;
   }
-  blockquote {
-    width: 50%;
-    p {
-      width: 100%;
-      margin-bottom: 0;
-    }
-    .quotation {
-      font-size: 30px;
-      //margin: 0 auto;
-      quotes: "\201C""\201D""\2018""\2019";
-      padding: 10px 20px 0px;
-      line-height: 1.4;
-    }
-    
-    .quotation:before {
-      content: open-quote;
-      display: inline;
-      line-height: 0;
-      left: -10px;
-      position: relative;
-      top: 30px;
-      color: #ccc;
-      font-size: 3em;
-    }
-    .quotation::after {
-      content: close-quote;
-      display: inline;
-      line-height: 0;
-      left: 10px;
-      position: relative;
-      top: 35px;
-      color: #ccc;
-      font-size: 3em;
-    }
-    footer {
-      margin:0;
-      text-align: right;
-      font-size: 1.5em;
-      font-style: italic;
-    }
-  }
-  
 }

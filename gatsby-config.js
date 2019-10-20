@@ -7,6 +7,8 @@ module.exports = {
     contact: {
       phone: 'XXX XXX XXX',
       email: 'info@thestanbiz.com',
+      fb: 'https://www.facebook.com/TheStanBiz/',
+      skype: '@StanBiz'
     },
     menuLinks: [
       {
