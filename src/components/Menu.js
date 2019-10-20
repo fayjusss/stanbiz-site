@@ -11,6 +11,21 @@ const Menu = (props) => {
             <Link to={link.link}>{link.name}</Link>
           </li>
         ))}
+        <li>
+          <a href={`mailto:${props.data.site.siteMetadata.contact.email}`}>
+            <i class="fas fa-lg fa-envelope"></i>
+          </a>
+        </li>
+        <li>
+          <a href={`${props.data.site.siteMetadata.contact.fb}`}>
+            <i class="fab fa-lg fa-facebook-square"></i>
+          </a>
+        </li>
+        <li> 
+          <a href={"skype:live:.cid.5d01f27b1750bf7b?call"}>
+            <i class="fab fa-lg fa-skype"></i>
+          </a>
+        </li>
       </ul>
     </div>
   );
@@ -22,6 +37,10 @@ export default props => (
       query SiteTitleQuery {
         site {
           siteMetadata {
+            contact {
+              email
+              fb
+            }
             menuLinks {
               name
               link
