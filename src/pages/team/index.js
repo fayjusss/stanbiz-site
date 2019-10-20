@@ -12,7 +12,7 @@ const Team = (props) => {
         <div className="container">
           <div className="row">
             <div className="col-12">
-              <h1>Meet The Team</h1>
+              <h1>Team</h1>
               <p>
                 Our team of qualified accountants and financial consultants can help your business
                 at any stage of it’s growth.
@@ -22,7 +22,7 @@ const Team = (props) => {
         </div>
       </div>
 
-      <div className="container pb-6">
+      {/* <div className="container pb-6">
         <div className="row">
           {teams.map(edge => (
             <div key={edge.node.frontmatter.path} className="col-12 col-md-6 mb-1">
@@ -62,7 +62,7 @@ const Team = (props) => {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
     </Layout>
   );
 };

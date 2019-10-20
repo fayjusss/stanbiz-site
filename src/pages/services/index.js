@@ -27,7 +27,7 @@ const Services = (props) => {
                   <h2>
                     <Link to={edge.node.frontmatter.path}>{edge.node.frontmatter.title}</Link>
                   </h2>
-                  <p>{edge.node.excerpt}</p>
+                  <div className="content" dangerouslySetInnerHTML={{ __html: edge.node.html }} />
                 </div>
               </div>
             </div>
@@ -46,11 +46,11 @@ export const query = graphql`
     ) {
       edges {
         node {
-          excerpt
           frontmatter {
             title
             path
           }
+          html
         }
       }
     }

@@ -2,8 +2,8 @@ const guid = process.env.NETLIFY_GOOGLE_ANALYTICS_ID;
 
 module.exports = {
   siteMetadata: {
-    title: 'Stanbiz',
-    description: 'Official Website of Stanbiz',
+    title: 'StanBiz',
+    description: 'Official Website of StanBiz',
     contact: {
       phone: 'XXX XXX XXX',
       email: 'info@thestanbiz.com',

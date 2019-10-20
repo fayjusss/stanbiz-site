@@ -42,7 +42,7 @@ const Home = (props) => {
                   </div>
                 )}
                 <Link className="feature-title" to={edge.node.frontmatter.path}>{edge.node.frontmatter.title}</Link>
-                <div className="feature-content">{edge.node.excerpt}</div>
+                <div className="content" dangerouslySetInnerHTML={{ __html: edge.node.html }} />
               </div>
             </div>
           ))}
@@ -72,7 +72,7 @@ export const query = graphql`
             order
             image
           }
-          excerpt
+          html
         }
       }
     }

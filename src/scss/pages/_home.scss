@@ -47,6 +47,12 @@
         font-style: italic;
       }
     }
+    .content {
+      ul {
+        padding-left: 0;
+        text-align: left;
+      }
+    }
   }
   @include media-breakpoint-up(md) {
     background-size: 70%;

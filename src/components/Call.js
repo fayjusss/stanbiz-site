@@ -11,7 +11,7 @@ const Call = props => (
         <a href={`${props.data.site.siteMetadata.contact.fb}`}>
           <i class="fab fa-2x fa-facebook-square"></i>
         </a>
-        <a href={"skype:StanBiz?call"}>
+        <a href={"skype:live:.cid.5d01f27b1750bf7b?call"}>
           <i class="fab fa-2x fa-skype"></i>
         </a>
       </div>
