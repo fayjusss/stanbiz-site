@@ -4,36 +4,25 @@ import { StaticQuery, graphql } from 'gatsby';
 const Call = props => (
   <div className="call">
     <div className="call-box-top">
-{/*       <div className="call-phone">
-        <strong>Phone: </strong>
-        <a href={`tel:${props.data.site.siteMetadata.contact.phone}`}>
-        {props.data.site.siteMetadata.contact.phone}
-        </a>
-      </div> */}
-      <div className="call-email">
-        <strong>Email: </strong>
+      <div className="call-actions">
         <a href={`mailto:${props.data.site.siteMetadata.contact.email}`}>
-          {props.data.site.siteMetadata.contact.email}
+          <i class="fas fa-2x fa-envelope"></i>
         </a>
-      </div>
-      <div className="call-fb">
-        <strong>Facebook: </strong>
         <a href={`${props.data.site.siteMetadata.contact.fb}`}>
-          {props.data.site.siteMetadata.contact.fb}
+          <i class="fab fa-2x fa-facebook-square"></i>
+        </a>
+        <a href={"skype:StanBiz?call"}>
+          <i class="fab fa-2x fa-skype"></i>
         </a>
       </div>
-      <div className="call-skype">
-        <strong>Skype: </strong>
-        {props.data.site.siteMetadata.contact.skype}
-      </div>
-    </div>
-    {props.button && (
+      {props.button && (
       <div className="call-box-bottom">
         <a href="/contact" className="button">
           Contact
         </a>
       </div>
-    )}
+      )}
+    </div>
   </div>
 );
 
