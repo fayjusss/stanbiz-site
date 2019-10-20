@@ -4,6 +4,7 @@ import Helmet from 'react-helmet';
 import SEO from '../components/SEO';
 import Layout from '../layouts/index';
 import Call from '../components/Call';
+import logo from '../images/logo.svg';
 
 const Home = (props) => {
   const markdown = props.data.allMarkdownRemark.edges;
@@ -18,12 +19,12 @@ const Home = (props) => {
       </Helmet>
       <div className="intro pb-4">
         <div className="container">
-          <h1>StanBiz</h1>
+          <img alt="logo tag" src={logo} className="pb-3"/>
           <blockquote><p className="quotation">I am a slow walker but I never walk backwards</p>
             <footer>- Abraham Lincoln</footer>
           </blockquote> 
           <p>
-           Inspired by above statement, StanBiz, a startup team of young men with highly ambitious attitudes, is growing from better to best with every new step it takes with vision to grow your business with StanBiz’s standardize services. 
+           Inspired by above statement, StanBiz, a startup team with highly ambitious attitudes, is growing from better to best with every new step it takes with vision to grow your business with StanBiz’s standardize services. 
           </p>
         </div>
       </div>

@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql, StaticQuery } from 'gatsby';
 import ifa from '../images/ifa.jpg';
+import logoTag from '../images/logo_tag.png';
 
 const Footer = props => (
   <div className="footer-strip">
@@ -8,7 +9,7 @@ const Footer = props => (
       <div className="row">
         <div className="col-12">
           <div className="footer">
-            <h3 className="footer-title">{props.data.site.siteMetadata.title}</h3>
+            <img alt="logo tag" src={logoTag} />
             <ul className="footer-menu">
               <li>
                 <img alt="ifa" src={ifa} /> 
