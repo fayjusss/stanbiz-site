@@ -45,13 +45,11 @@ const Team = (props) => {
                       <li>
                         <strong>{edge.node.frontmatter.jobtitle}</strong>
                       </li>
-                      <li>
+                      <li className="pt-1">
                         <a target="_blank" href={edge.node.frontmatter.linkedinurl}>
-                          {edge.node.frontmatter.linkedinurl}
+                          <i class="fab fa-lg fa-fw fa-linkedin"></i>
                         </a>
-                      </li>
-                      <li>
-                        <a href={edge.node.frontmatter.email}>{edge.node.frontmatter.email}</a>
+                        <a href={edge.node.frontmatter.email} className="pl-1"><i class="fa fa-lg fa-fw fa-envelope"></i></a>
                       </li>
                     </ul>
                   </div>
@@ -73,7 +71,7 @@ export const query = graphql`
   query TeamQuery {
     allMarkdownRemark(
       filter: { fileAbsolutePath: { regex: "/team/" } }
-      sort: { fields: [frontmatter___date], order: DESC }
+      sort: { fields: [frontmatter___order], order: ASC }
     ) {
       edges {
         node {

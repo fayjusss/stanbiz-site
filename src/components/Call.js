@@ -4,12 +4,12 @@ import { StaticQuery, graphql } from 'gatsby';
 const Call = props => (
   <div className="call">
     <div className="call-box-top">
-      <div className="call-phone">
+{/*       <div className="call-phone">
         <strong>Phone: </strong>
         <a href={`tel:${props.data.site.siteMetadata.contact.phone}`}>
         {props.data.site.siteMetadata.contact.phone}
         </a>
-      </div>
+      </div> */}
       <div className="call-email">
         <strong>Email: </strong>
         <a href={`mailto:${props.data.site.siteMetadata.contact.email}`}>

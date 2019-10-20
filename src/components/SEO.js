@@ -18,7 +18,9 @@ const SEO = props => (
           link={[
             { rel: 'shortcut icon', type: 'image/png', href: `${favicon}` },
           ]}
-        />
+        >
+          <script src="https://kit.fontawesome.com/2099d83c0e.js" crossorigin="anonymous"></script>
+        </Helmet>
       );
     }}
   />

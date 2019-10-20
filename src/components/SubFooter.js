@@ -20,11 +20,6 @@ const SubFooter = props => (
                 </a>
               </li>
             </ul>
-            <ul>
-              <li>
-                <a href="https://www.zerostatic.io">www.zerostatic.io</a>
-              </li>
-            </ul>
           </div>
         </div>
       </div>

@@ -17,12 +17,12 @@ module.exports = {
         name: 'Team',
         link: '/team',
       },
-      {
+/*       {
         name: 'Testimonials',
         link: '/testimonials',
-      },
+      }, */
       {
-        name: 'Contact',
+        name: 'Contact Us',
         link: '/contact',
       },
     ],
