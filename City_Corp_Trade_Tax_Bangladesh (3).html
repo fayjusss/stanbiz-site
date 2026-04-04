@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>City Corporation Trade Tax Rates — Bangladesh | StanBiz</title>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0F1923;--blue:#2563EB;--blue-lt:#60A5FA;
+  --coral:#F97316;--gold:#F59E0B;--teal:#0D9488;
+  --green:#16A34A;--slate:#334155;--light:#94A3B8;
+  --bg:#F8FAFC;--white:#fff;--border:#E2E8F0;--alt:#F1F5F9;
+}
+body{font-family:"Segoe UI",system-ui,sans-serif;background:var(--bg);color:var(--slate)}
+
+/* HEADER */
+.hdr{background:var(--navy)}
+.stripe{display:flex;height:6px}
+.stripe span:nth-child(1){flex:2;background:var(--blue)}
+.stripe span:nth-child(2){flex:1.5;background:var(--coral)}
+.stripe span:nth-child(3){flex:1;background:var(--gold)}
+.hi{max-width:1100px;margin:0 auto;padding:20px 20px 24px}
+.ht{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:12px}
+.brand{color:var(--coral);font-size:13px;font-weight:700;letter-spacing:1px;margin-bottom:8px}
+.hdr h1{color:#fff;font-size:clamp(18px,4vw,28px);font-weight:800;line-height:1.2}
+.hdr h1 span{color:var(--blue-lt)}
+.hs{color:var(--light);font-size:13px;margin-top:6px}
+.badge{background:rgba(37,99,235,.2);border:1px solid var(--blue);border-radius:8px;padding:10px 16px;text-align:center;flex-shrink:0}
+.badge .num{color:var(--coral);font-size:28px;font-weight:800;display:block}
+.badge .lbl{color:var(--light);font-size:11px}
+
+/* INTRO SECTION */
+.intro-wrap{max-width:1100px;margin:20px auto;padding:0 20px}
+.intro-header{background:var(--navy);border-radius:12px;padding:24px 28px;margin-bottom:16px;border-left:5px solid var(--coral)}
+.intro-badge{display:inline-block;background:rgba(249,115,22,.2);border:1px solid var(--coral);color:var(--coral);font-size:11px;font-weight:700;padding:4px 10px;border-radius:20px;margin-bottom:10px;letter-spacing:.5px}
+.intro-header h2{color:#fff;font-size:clamp(16px,3vw,22px);font-weight:800;margin-bottom:6px}
+.intro-sub{color:var(--light);font-size:12.5px}
+.intro-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:12px;margin-bottom:20px}
+.intro-card{background:var(--white);border-radius:10px;padding:16px;display:flex;gap:14px;box-shadow:0 1px 6px rgba(0,0,0,.06);border-left:4px solid var(--border)}
+.intro-card.accent-blue{border-left-color:var(--blue)}
+.intro-card.accent-coral{border-left-color:var(--coral)}
+.intro-card.accent-gold{border-left-color:var(--gold)}
+.intro-card.accent-green{border-left-color:var(--green)}
+.intro-num{background:var(--navy);color:var(--blue-lt);font-size:16px;font-weight:800;width:36px;height:36px;border-radius:8px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.intro-title{font-size:14px;font-weight:700;color:#1E293B;margin-bottom:6px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.intro-body{font-size:12.5px;color:var(--slate);line-height:1.6}
+.rate-chip{display:inline-block;padding:2px 8px;border-radius:12px;font-size:11px;font-weight:700}
+.rate-chip.blue{background:#DBEAFE;color:var(--blue)}
+.rate-chip.coral{background:#FFF7ED;color:var(--coral)}
+.rate-chip.gold{background:#FFFBEB;color:#92400E}
+.hotel-rates{margin:8px 0;display:flex;flex-direction:column;gap:4px}
+.hr-row{display:flex;justify-content:space-between;align-items:center;padding:4px 8px;background:var(--alt);border-radius:6px;font-size:12px}
+
+/* DIVIDER */
+.section-divider{max-width:1100px;margin:0 auto 16px;padding:0 20px}
+.sdiv{display:flex;align-items:center;gap:12px}
+.sdiv-line{flex:1;height:2px;background:linear-gradient(to right,var(--blue),var(--coral))}
+.sdiv-text{background:var(--navy);color:var(--blue-lt);font-size:12px;font-weight:700;padding:6px 16px;border-radius:20px;white-space:nowrap}
+
+/* NOTICE */
+.notice{background:#FFF7ED;border-left:4px solid var(--coral);max-width:1100px;margin:0 auto 16px;padding:12px 16px;border-radius:0 8px 8px 0;font-size:13px;color:#92400E}
+
+/* CONTROLS */
+.ctrl{max-width:1100px;margin:0 auto 16px;padding:0 20px;display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.sw{flex:1;min-width:220px;position:relative}
+.sw input{width:100%;padding:12px 16px 12px 42px;border:2px solid var(--border);border-radius:10px;font-size:15px;background:var(--white);outline:none;transition:border-color .2s}
+.sw input:focus{border-color:var(--blue)}
+.sw svg{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--light)}
+select{padding:12px 16px;border:2px solid var(--border);border-radius:10px;font-size:14px;background:var(--white);outline:none;cursor:pointer;min-width:180px}
+.cnt{background:var(--navy);color:#fff;padding:8px 14px;border-radius:8px;font-size:13px;font-weight:600;white-space:nowrap}
+
+/* TABLE */
+.tw{max-width:1100px;margin:0 auto 40px;padding:0 20px}
+table{width:100%;border-collapse:collapse;background:var(--white);border-radius:12px;overflow:hidden;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+thead tr{background:var(--navy)}
+thead th{padding:13px 14px;text-align:left;color:#fff;font-size:12px;font-weight:700;letter-spacing:.5px;text-transform:uppercase}
+thead th:nth-child(1){width:60px;text-align:center}
+thead th:nth-child(3),thead th:nth-child(4){width:165px;text-align:center}
+.cr td{color:#fff;font-weight:700;font-size:12.5px;padding:7px 14px;letter-spacing:.3px}
+.c-limited td{background:#1E40AF}.c-bank td{background:#0D9488}.c-education td{background:#7C3AED}
+.c-contractor td{background:#F97316}.c-agent td{background:#16A34A}.c-manufacturer td{background:#0891B2}
+.c-workshop td{background:#DC2626}.c-food td{background:#BE185D}.c-hotel td{background:#B45309}
+.c-trade td{background:#1E3A5F}.c-health td{background:#065F46}.c-professional td{background:#4F46E5}
+.c-transport td{background:#78350F}.c-misc td{background:#374151}
+tbody tr.dr{border-bottom:1px solid var(--border);transition:background .15s}
+tbody tr.dr:nth-child(even){background:var(--alt)}
+tbody tr.dr:hover{background:#EFF6FF}
+tbody tr.dr td{padding:9px 14px;font-size:13px;vertical-align:top;line-height:1.5}
+.sc{text-align:center;color:var(--light);font-size:11px;font-weight:600}
+.dc{color:#1E293B}
+.db{color:var(--slate);font-size:11.5px;margin-top:2px}
+.rc{text-align:center;font-weight:700;font-size:12.5px;color:var(--green);white-space:nowrap}
+.rc.sp{color:var(--coral)}
+mark{background:#FEF9C3;padding:0 2px;border-radius:2px}
+.nr{text-align:center;padding:60px 20px;color:var(--light);font-size:15px}
+footer{background:var(--navy);padding:20px;text-align:center;color:var(--light);font-size:12px}
+footer a{color:var(--blue-lt);text-decoration:none}
+@media(max-width:640px){thead th:nth-child(3),tbody td:nth-child(3){display:none}}
+</style>
+</head>
+<body>
+
+<div class="hdr">
+  <div class="stripe"><span></span><span></span><span></span></div>
+  <div class="hi"><div class="ht">
+    <div>
+      <div class="brand">STANBIZ &middot; BANGLADESH BUSINESS GUIDE</div>
+      <h1>City Corporation <span>Trade Tax Rates</span></h1>
+      <div class="hs">City Corporation Model Tax Schedule, 2016 &nbsp;&middot;&nbsp; SRO No. 13-Law/2016 &nbsp;&middot;&nbsp; All 294 Business Categories</div>
+    </div>
+    <div class="badge"><span class="num">495+</span><span class="lbl">Business Entries</span></div>
+  </div></div>
+</div>
+
+
+<div class="intro-wrap">
+  <div class="intro-header">
+    <div class="intro-badge">SRO No. 13-Law/2016</div>
+    <h2>1.3 &nbsp;City Corporation Model Tax Schedule, 2016</h2>
+    <p class="intro-sub">Local Government (City Corporation) Act, 2009 — Section 84 &nbsp;|&nbsp; Applicable to ALL City Corporations in Bangladesh</p>
+  </div>
+
+  <div class="intro-grid">
+    <div class="intro-card">
+      <div class="intro-num">1</div>
+      <div class="intro-content">
+        <div class="intro-title">Short Title &amp; Application</div>
+        <div class="intro-body">This schedule is called the <strong>City Corporation Model Tax Schedule, 2016</strong> and applies to <strong>all City Corporations</strong> in Bangladesh.</div>
+      </div>
+    </div>
+
+    <div class="intro-card">
+      <div class="intro-num">2</div>
+      <div class="intro-content">
+        <div class="intro-title">Definitions</div>
+        <div class="intro-body">
+          <b>(a)</b> 'Act' = Local Government (City Corporation) Act, 2009<br>
+          <b>(b)</b> 'Building' = as defined under Section 2(5) of the Act<br>
+          <b>(c)</b> 'City Corporation' = any City Corporation formed under the Act
+        </div>
+      </div>
+    </div>
+
+    <div class="intro-card accent-blue">
+      <div class="intro-num">3</div>
+      <div class="intro-content">
+        <div class="intro-title">Tax on Buildings &amp; Land &nbsp;<span class="rate-chip blue">Max 7%</span></div>
+        <div class="intro-body">
+          (1) Maximum <strong>7%</strong> of annual value of buildings and land. Minimum BDT 1.<br>
+          (2) Religious institutions exempt — commercial portions taxable.<br>
+          (3) Freedom fighters' residential portion (up to 1,000 sq ft) exempt.<br>
+          (4) Annual value based on actual use and rent receipts.<br>
+          (5) Taxpayer may pay up to <strong>5 years in advance</strong>.
+        </div>
+      </div>
+    </div>
+
+    <div class="intro-card accent-coral">
+      <div class="intro-num">4</div>
+      <div class="intro-content">
+        <div class="intro-title">Immovable Property Transfer Tax &nbsp;<span class="rate-chip coral">Max 2%</span></div>
+        <div class="intro-body">
+          Maximum <strong>2%</strong> of stated value on each property transfer deed.<br>
+          <em>Exempt:</em> Donations to registered religious/charitable/sports/cultural organizations, and legal debt repayment transfers.
+        </div>
+      </div>
+    </div>
+
+    <div class="intro-card">
+      <div class="intro-num">5</div>
+      <div class="intro-content">
+        <div class="intro-title">Waste Disposal Rate &nbsp;<span class="rate-chip blue">Max 7%</span></div>
+        <div class="intro-body">Maximum <strong>7%</strong> of annual tax assessment of service users' buildings (including proportionate collection costs).</div>
+      </div>
+    </div>
+
+    <div class="intro-card">
+      <div class="intro-num">6</div>
+      <div class="intro-content">
+        <div class="intro-title">Street Lighting Rate &nbsp;<span class="rate-chip blue">Max 5%</span></div>
+        <div class="intro-body">Maximum <strong>5%</strong> of annual tax assessment of service users' buildings (including proportionate collection costs).</div>
+      </div>
+    </div>
+
+    <div class="intro-card">
+      <div class="intro-num">7</div>
+      <div class="intro-content">
+        <div class="intro-title">Water Rate &nbsp;<span class="rate-chip blue">Max 3%</span></div>
+        <div class="intro-body">Maximum <strong>3%</strong> for water supply maintenance. <em>Not applicable</em> where a Water Supply &amp; Sewerage Authority (Act 1996) already collects water charges.</div>
+      </div>
+    </div>
+
+    <div class="intro-card">
+      <div class="intro-num">8</div>
+      <div class="intro-content">
+        <div class="intro-title">Health Tax &nbsp;<span class="rate-chip blue">Max 8%</span></div>
+        <div class="intro-body">Maximum <strong>8%</strong> of annual tax assessment of service users' buildings (including proportionate collection costs).</div>
+      </div>
+    </div>
+
+    <div class="intro-card accent-gold">
+      <div class="intro-num">9</div>
+      <div class="intro-content">
+        <div class="intro-title">City Tax on Hotel Guests</div>
+        <div class="intro-body">
+          Tax on room rent from hotel guests in City Corporation areas:<br>
+          <div class="hotel-rates">
+            <div class="hr-row"><span>5-Star Hotel</span><span class="rate-chip gold">5%</span></div>
+            <div class="hr-row"><span>4-Star Hotel</span><span class="rate-chip gold">4%</span></div>
+            <div class="hr-row"><span>3-Star Hotel</span><span class="rate-chip gold">3%</span></div>
+          </div>
+          Hotel management collects and remits to the City Corporation.
+        </div>
+      </div>
+    </div>
+
+    <div class="intro-card accent-green">
+      <div class="intro-num">10</div>
+      <div class="intro-content">
+        <div class="intro-title">Tax on Business, Trade, Profession or Industry</div>
+        <div class="intro-body">
+          (1) Business size determined by <strong>floor area in square feet</strong>.<br>
+          (2) City Corporations submit size classification proposals to Local Government Division.<br>
+          (3) Trade license fee payable annually, collectible up to <strong>5 years</strong> in advance.<br>
+          (4) <strong>The following table lists maximum annual trade tax rates. No tax exceeding these rates may be imposed.</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div class="section-divider">
+  <div class="sdiv">
+    <div class="sdiv-line"></div>
+    <div class="sdiv-text">&#9660; &nbsp; SECTION 10 — MAXIMUM ANNUAL TRADE TAX TABLE &nbsp; &#9660;</div>
+    <div class="sdiv-line"></div>
+  </div>
+</div>
+
+<div class="notice">&#9888; <strong>Legal Protection (Section 10):</strong> The tax imposed on any business, profession, trade or industrial establishment in City Corporation areas <strong>cannot exceed</strong> the rates in the table below. Items 224–294 carry a uniform rate for all City Corporations.</div>
+
+<div class="ctrl">
+  <div class="sw">
+    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+    <input type="text" id="si" placeholder="Search your business type (e.g. restaurant, hotel, pharmacy, garments, IT...)" oninput="ft()">
+  </div>
+  <select id="cf" onchange="ft()">
+    <option value="">All Categories (14)</option>
+    <option value="limited">Limited Companies</option>
+    <option value="bank">Banks &amp; Financial</option>
+    <option value="education">Education &amp; Training</option>
+    <option value="contractor">Contractors &amp; Real Estate</option>
+    <option value="agent">Agents &amp; Representatives</option>
+    <option value="manufacturer">Manufacturers &amp; Industry</option>
+    <option value="workshop">Workshop &amp; Repair</option>
+    <option value="food">Food &amp; Hospitality</option>
+    <option value="hotel">Hotels &amp; Accommodation</option>
+    <option value="trade">Trade &amp; Commerce</option>
+    <option value="health">Health &amp; Medical</option>
+    <option value="professional">Professional Services</option>
+    <option value="transport">Transport &amp; Vehicles</option>
+    <option value="misc">Miscellaneous</option>
+  </select>
+  <div class="cnt" id="rc2">Loading...</div>
+</div>
+
+<div class="tw">
+  <table id="mt">
+    <thead><tr>
+      <th>#</th>
+      <th>Business / Trade / Profession &nbsp;(Bengali name shown below)</th>
+      <th style="text-align:center">Dhaka North, South &amp; Chittagong</th>
+      <th style="text-align:center">Other City Corporations</th>
+    </tr></thead>
+    <tbody id="tb"></tbody>
+  </table>
+  <div class="nr" id="nr" style="display:none">No results found. Try a different search term.</div>
+</div>
+
+<div class="stripe"><span></span><span></span><span></span></div>
+<footer>
+  Source: Bangladesh Business Manual — Chapter 1: Registration &amp; Licensing &nbsp;|&nbsp; City Corporation Model Tax Schedule, 2016 (SRO No. 13-Law/2016)<br>
+  <a href="https://thestanbiz.com" target="_blank">thestanbiz.com</a> &nbsp;|&nbsp;
+  <a href="https://www.linkedin.com/company/stanbiz" target="_blank">linkedin.com/company/stanbiz</a><br><br>
+  <em>For reference only. Verify current rates with your relevant City Corporation authority.</em>
+</footer>
+
+<script>
+const CAT_META={
+  limited:     {l:"1. Limited Companies",          cls:"c-limited",     i:"&#127970;"},
+  bank:        {l:"2. Banks &amp; Financial",       cls:"c-bank",        i:"&#127974;"},
+  education:   {l:"3. Education &amp; Training",   cls:"c-education",   i:"&#127891;"},
+  contractor:  {l:"4. Contractors &amp; Real Estate",cls:"c-contractor",i:"&#127959;"},
+  agent:       {l:"5. Agents &amp; Representatives",cls:"c-agent",      i:"&#129309;"},
+  manufacturer:{l:"6. Manufacturers &amp; Industry",cls:"c-manufacturer",i:"&#127981;"},
+  workshop:    {l:"7. Workshop &amp; Repair",       cls:"c-workshop",    i:"&#128295;"},
+  food:        {l:"8. Food &amp; Hospitality",      cls:"c-food",        i:"&#127965;"},
+  hotel:       {l:"9. Hotels &amp; Accommodation", cls:"c-hotel",       i:"&#127976;"},
+  trade:       {l:"10. Trade &amp; Commerce",       cls:"c-trade",       i:"&#128717;"},
+  health:      {l:"11. Health &amp; Medical",       cls:"c-health",      i:"&#127973;"},
+  professional:{l:"12. Professional Services",     cls:"c-professional",i:"&#128188;"},
+  transport:   {l:"13. Transport &amp; Vehicles",   cls:"c-transport",   i:"&#128664;"},
+  misc:        {l:"14. Miscellaneous",              cls:"c-misc",        i:"&#128230;"},
+};
+const DATA=[
+  {cat:"limited",sl:"1(ক)",en:"Limited Company — Capital up to BDT 1,00,000",bn:"লিমিটেড কোম্পানি — পরিশোধিত মূলধন ১ লক্ষ পর্যন্ত",dhaka:"1,500",other:"1,500"},
+  {cat:"limited",sl:"1(খ)",en:"Limited Company — BDT 1,00,000 to 5,00,000",bn:"পরিশোধিত মূলধন ১ লক্ষ হতে ৫ লক্ষ পর্যন্ত",dhaka:"2,000",other:"2,000"},
+  {cat:"limited",sl:"1(গ)",en:"Limited Company — BDT 5,00,000 to 10,00,000",bn:"পরিশোধিত মূলধন ৫ লক্ষ হতে ১০ লক্ষ পর্যন্ত",dhaka:"3,500",other:"3,500"},
+  {cat:"limited",sl:"1(ঘ)",en:"Limited Company — BDT 10,00,000 to 25,00,000",bn:"পরিশোধিত মূলধন ১০ লক্ষ হতে ২৫ লক্ষ পর্যন্ত",dhaka:"4,500",other:"4,500"},
+  {cat:"limited",sl:"1(ঙ)",en:"Limited Company — BDT 25,00,000 to 50,00,000",bn:"পরিশোধিত মূলধন ২৫ লক্ষ হতে ৫০ লক্ষ পর্যন্ত",dhaka:"5,500",other:"5,500"},
+  {cat:"limited",sl:"1(চ)",en:"Limited Company — BDT 50,00,000 to 1 crore",bn:"পরিশোধিত মূলধন ৫০ লক্ষ হতে ১ কোটি পর্যন্ত",dhaka:"7,500",other:"7,500"},
+  {cat:"limited",sl:"1(ছ)",en:"Limited Company — BDT 1 crore to 5 crore",bn:"পরিশোধিত মূলধন ১ কোটি হতে ৫ কোটি পর্যন্ত",dhaka:"10,000",other:"10,000"},
+  {cat:"limited",sl:"1(জ)",en:"Limited Company — Above BDT 5 crore",bn:"পরিশোধিত মূলধন ৫ কোটি টাকার বেশি",dhaka:"12,000",other:"12,000"},
+  {cat:"bank",sl:"2(ক)",en:"Scheduled Bank & Financial Institution",bn:"তফসিলি ব্যাংক ও আর্থিক প্রতিষ্ঠান",dhaka:"10,000",other:"10,000"},
+  {cat:"bank",sl:"2(খ)",en:"Insurance — Branch Office",bn:"বীমা (শাখা অফিস)",dhaka:"5,000",other:"5,000"},
+  {cat:"bank",sl:"2(গ)",en:"Loan Institution — Branch Office",bn:"ঋণদান প্রতিষ্ঠান (শাখা অফিস)",dhaka:"5,000",other:"5,000"},
+  {cat:"bank",sl:"2(ঘ)",en:"Money Exchange",bn:"মানি এক্সচেঞ্জ",dhaka:"5,000",other:"5,000"},
+  {cat:"bank",sl:"2(ঙ)",en:"Stock/Share Trading — Branch Office",bn:"শেয়ার ক্রয়-বিক্রয় প্রতিষ্ঠান (শাখা অফিস)",dhaka:"3,000",other:"3,000"},
+  {cat:"bank",sl:"2(চ)",en:"NGO — Branch Office",bn:"এনজিও (শাখা অফিস)",dhaka:"5,000",other:"5,000"},
+  {cat:"bank",sl:"266",en:"Bank Agent",bn:"ব্যাংক এজেন্ট",dhaka:"8,000",other:"8,000"},
+  {cat:"education",sl:"3(ক)",en:"Private University",bn:"বেসরকারি বিশ্ববিদ্যালয়",dhaka:"5,000",other:"5,000"},
+  {cat:"education",sl:"3(খ)",en:"Private College / School (Large)",bn:"বেসরকারি কলেজ/স্কুল (বড়)",dhaka:"3,000",other:"3,000"},
+  {cat:"education",sl:"3(গ)",en:"Kindergarten",bn:"কিন্ডার গার্টেন",dhaka:"2,000",other:"2,000"},
+  {cat:"education",sl:"3(ঘ)",en:"Training Center",bn:"ট্রেনিং সেন্টার",dhaka:"1,000",other:"1,000"},
+  {cat:"education",sl:"3(ঙ)",en:"Coaching Center",bn:"কোচিং সেন্টার",dhaka:"1,000",other:"1,000"},
+  {cat:"education",sl:"3(চ)",en:"Computer Training Center",bn:"কম্পিউটার প্রশিক্ষণ কেন্দ্র",dhaka:"500",other:"500"},
+  {cat:"education",sl:"267",en:"Educational Consultancy",bn:"শিক্ষামূলক কনসালটেন্সি",dhaka:"3,000",other:"3,000"},
+  {cat:"contractor",sl:"4(ক)",en:"Contractor — Special Class",bn:"বিশেষ শ্রেণীর ঠিকাদার",dhaka:"6,000",other:"4,000"},
+  {cat:"contractor",sl:"4(খ)",en:"Contractor — First Class",bn:"প্রথম শ্রেণীর ঠিকাদার",dhaka:"4,000",other:"2,000"},
+  {cat:"contractor",sl:"4(গ)",en:"Contractor — Second Class",bn:"দ্বিতীয় শ্রেণীর ঠিকাদার",dhaka:"3,000",other:"1,500"},
+  {cat:"contractor",sl:"4(ঘ)",en:"Contractor — Third Class",bn:"তৃতীয় শ্রেণীর ঠিকাদার",dhaka:"2,000",other:"1,000"},
+  {cat:"contractor",sl:"4(ঙ)",en:"Supplier",bn:"সরবরাহকারী",dhaka:"2,000",other:"1,000"},
+  {cat:"contractor",sl:"5",en:"Developer / Real Estate",bn:"বিল্ডার্স/ডেভেলপার্স/রিয়েল এস্টেট",dhaka:"6,000",other:"4,000"},
+  {cat:"agent",sl:"6(ক)",en:"Eventing & Commission Agent / Marketing",bn:"ইভেন্টিং এন্ড কমিশন এজেন্ট/নিলাম/ক্রয়/বিক্রয়/মার্কেটিং",dhaka:"2,000",other:"1,000"},
+  {cat:"agent",sl:"6(খ)",en:"Clearing & Forwarding Agent",bn:"ক্লিয়ারিং ও ফরোয়ার্ডিং এজেন্ট",dhaka:"2,500",other:"1,500"},
+  {cat:"agent",sl:"6(গ)",en:"Traveling Agent",bn:"ট্রাভেলিং এজেন্ট",dhaka:"2,000",other:"2,000"},
+  {cat:"agent",sl:"6(ঘ)",en:"Recruiting Agent",bn:"রিক্রুটিং এজেন্ট",dhaka:"5,000",other:"4,000"},
+  {cat:"agent",sl:"6(ঙ)",en:"All types of Distributor",bn:"সকল প্রকার পরিবেশক",dhaka:"2,000",other:"1,000"},
+  {cat:"agent",sl:"6(চ)",en:"All types of Importer",bn:"সকল প্রকার আমদানিকারক",dhaka:"2,000",other:"1,000"},
+  {cat:"agent",sl:"6(ছ)",en:"All types of Exporter",bn:"সকল প্রকার রফতানিকারক",dhaka:"1,000",other:"1,000"},
+  {cat:"agent",sl:"6(জ)",en:"Hajj Agency",bn:"হজ্জু এজেন্সি",dhaka:"2,000",other:"1,000"},
+  {cat:"agent",sl:"273",en:"Freight Forwarding",bn:"ফ্রেইট ফরওয়ার্ডিং",dhaka:"2,500",other:"2,500"},
+  {cat:"manufacturer",sl:"7",en:"Textile Mill",bn:"টেক্সটাইল মিল",dhaka:"4,500",other:"3,000"},
+  {cat:"manufacturer",sl:"8",en:"Jute Mill",bn:"জুট মিল",dhaka:"4,000",other:"2,000"},
+  {cat:"manufacturer",sl:"9",en:"Iron & Steel Mill",bn:"আয়রন এন্ড স্টীল মিল",dhaka:"4,000",other:"2,500"},
+  {cat:"manufacturer",sl:"10",en:"Saw Mill",bn:"\'স\' মিল",dhaka:"5,000",other:"2,000"},
+  {cat:"manufacturer",sl:"11",en:"Tannery Factory",bn:"ট্যানারী কারখানা",dhaka:"5,000",other:"3,000"},
+  {cat:"manufacturer",sl:"12",en:"Garments Factory",bn:"গার্মেন্টস ফ্যাক্টরী",dhaka:"4,000",other:"3,000"},
+  {cat:"manufacturer",sl:"13",en:"Pharmaceutical Factory",bn:"ফার্মাসিউটিক্যাল ফ্যাক্টরী",dhaka:"5,000",other:"3,000"},
+  {cat:"manufacturer",sl:"14",en:"Chemical Factory",bn:"কেমিক্যাল ফ্যাক্টরী",dhaka:"3,000",other:"2,000"},
+  {cat:"manufacturer",sl:"15",en:"Bread & Biscuit Factory",bn:"ব্রেড এন্ড বিস্কুট ফ্যাক্টরী",dhaka:"1,000",other:"1,000"},
+  {cat:"manufacturer",sl:"16",en:"Jam/Jelly/Pickle/Sauce Factory",bn:"জ্যাম/জেলি/আচার/স্কোয়াশ ফ্যাক্টরী",dhaka:"1,000",other:"1,000"},
+  {cat:"manufacturer",sl:"17",en:"Lozenge Factory",bn:"লজেন্স ফ্যাক্টরী",dhaka:"1,000",other:"1,000"},
+  {cat:"manufacturer",sl:"18",en:"Cold Storage",bn:"কোল্ড স্টোরেজ",dhaka:"3,000",other:"2,000"},
+  {cat:"manufacturer",sl:"19",en:"Beverage Factory",bn:"বেভারেজ ফ্যাক্টরী",dhaka:"4,000",other:"2,000"},
+  {cat:"manufacturer",sl:"20",en:"Ice Factory / Ice Cream Factory",bn:"বরফ কল/আইসক্রিম ফ্যাক্টরী",dhaka:"2,000",other:"2,000"},
+  {cat:"manufacturer",sl:"21",en:"Tobacco Factory",bn:"টোব্যাকো ফ্যাক্টরী",dhaka:"5,000",other:"4,000"},
+  {cat:"manufacturer",sl:"22",en:"Rice/Dal/Flour Mill — Non-Automatic",bn:"চাল, ডাল, আটা, মশলা ভাঙার মিল (অটোমেটিক ব্যতিত)",dhaka:"1,000",other:"1,000"},
+  {cat:"manufacturer",sl:"23",en:"Rice/Dal/Flour Mill — Automatic",bn:"চাল, ডাল, আটা, মশলা ভাঙার মিল (অটোমেটিক)",dhaka:"1,000",other:"750"},
+  {cat:"manufacturer",sl:"24",en:"Oil Mill",bn:"তেল মিল",dhaka:"1,000",other:"1,000"},
+  {cat:"manufacturer",sl:"25",en:"Foundry",bn:"ঢালাই কারখানা",dhaka:"1,000",other:"1,000"},
+  {cat:"manufacturer",sl:"26",en:"Metallic",bn:"মেটালিক",dhaka:"1,000",other:"750"},
+  {cat:"manufacturer",sl:"27",en:"Mosquito Coil Factory",bn:"মশার কেয়েল ফ্যাক্টরী",dhaka:"1,000",other:"750"},
+  {cat:"manufacturer",sl:"28",en:"Candle Factory",bn:"মোমবাতি ফ্যাক্টরী",dhaka:"500",other:"500"},
+  {cat:"manufacturer",sl:"29",en:"Ceramic Materials Factory",bn:"সিরামিক সামগ্রী তৈরীর কারখানা",dhaka:"2,000",other:"2,000"},
+  {cat:"manufacturer",sl:"30",en:"Silk Factory",bn:"সিল্ক ফ্যাক্টরী",dhaka:"3,000",other:"3,000"},
+  {cat:"manufacturer",sl:"31",en:"Block Batik Printing Mill",bn:"ব্লক বাটিক বস্ত্র প্রিন্টিং মিল",dhaka:"1,000",other:"1,000"},
+  {cat:"manufacturer",sl:"32",en:"Parts / Retail Machine Parts",bn:"পার্টস/খুচরা যন্ত্রাংশ",dhaka:"1,000",other:"1,000"},
+  {cat:"manufacturer",sl:"139",en:"Ceramic Factory",bn:"সিরামিক ফ্যাক্টরি",dhaka:"10,000",other:"10,000"},
+  {cat:"manufacturer",sl:"160",en:"Sanitary Factory",bn:"স্যানিটারী কারখানা",dhaka:"1,000",other:"1,000"},
+  {cat:"manufacturer",sl:"207",en:"Spinning Mill (Non-Limited)",bn:"স্পিনিং মিল (লিমিটেড কোম্পানি ব্যতিত)",dhaka:"20,000",other:"20,000"},
+  {cat:"manufacturer",sl:"211",en:"Rubber Factory",bn:"রাবার কারখানা",dhaka:"5,000",other:"5,000"},
+  {cat:"manufacturer",sl:"222",en:"Soap Factory",bn:"সাবান কারখানা",dhaka:"3,000",other:"3,000"},
+  {cat:"manufacturer",sl:"227",en:"Aluminium Factory",bn:"এ্যালুমিনিয়াম কারখানা",dhaka:"5,000",other:"5,000"},
+  {cat:"manufacturer",sl:"239",en:"Plastic Goods Factory",bn:"প্লাস্টিক দ্রব্য তৈরির কারখানা",dhaka:"1,000",other:"1,000"},
+  {cat:"manufacturer",sl:"274",en:"Furniture Factory",bn:"ফার্নিচার কারখানা",dhaka:"1,500",other:"1,500"},
+  {cat:"manufacturer",sl:"277",en:"Re-packaging",bn:"রি-প্যাকেজিং",dhaka:"1,000",other:"1,000"},
+  {cat:"manufacturer",sl:"282",en:"Embroidery Factory (Manual)",bn:"এমব্রয়ডারি কারখানা (ম্যানুয়েল)",dhaka:"1,000",other:"1,000"},
+  {cat:"manufacturer",sl:"288",en:"Finishing Center (Garments)",bn:"ফিনিশিং সেন্টার (গার্মেন্টস সম্পৃক্ত)",dhaka:"2,000",other:"2,000"},
+  {cat:"manufacturer",sl:"290",en:"Solar Power Production",bn:"সৌর বিদ্যুৎ উৎপাদন",dhaka:"3,500",other:"3,500"},
+  {cat:"manufacturer",sl:"291",en:"Shoe Factory (Large)",bn:"জুতা তৈরির কারখানা (বড়)",dhaka:"5,000",other:"5,000"},
+  {cat:"manufacturer",sl:"292",en:"Shoe Factory (Small)",bn:"জুতা তৈরির কারখানা (ছোট)",dhaka:"3,000",other:"3,000"},
+  {cat:"manufacturer",sl:"294",en:"Cosmetics Manufacturing Factory",bn:"প্রসাধনী সামগ্রীর কারখানা",dhaka:"5,000",other:"5,000"},
+  {cat:"workshop",sl:"33(ক)",en:"Engineering Workshop (Large)",bn:"ইঞ্জিনিয়ারিং ওয়ার্কশপ (বড়)",dhaka:"1,500",other:"1,000"},
+  {cat:"workshop",sl:"33(খ)",en:"Engineering Workshop (Small)",bn:"ইঞ্জিনিয়ারিং ওয়ার্কশপ (ছোট)",dhaka:"1,000",other:"750"},
+  {cat:"workshop",sl:"33(গ)",en:"Motor Workshop (Large)",bn:"মটর ওয়ার্কশপ (বড়)",dhaka:"2,000",other:"1,500"},
+  {cat:"workshop",sl:"33(ঘ)",en:"Motor Workshop (Small)",bn:"মটর ওয়ার্কশপ (ছোট)",dhaka:"1,000",other:"750"},
+  {cat:"workshop",sl:"33(ঙ)",en:"Welding (Large)",bn:"ওয়েডিং (বড়)",dhaka:"2,000",other:"1,500"},
+  {cat:"workshop",sl:"33(চ)",en:"Welding (Small)",bn:"ওয়েডিং (ছোট)",dhaka:"1,000",other:"750"},
+  {cat:"workshop",sl:"33(ছ)",en:"Refrigerator / AC Repair",bn:"রেফ্রিজারেটর/এয়ারকুলার মেরামত",dhaka:"1,000",other:"750"},
+  {cat:"workshop",sl:"33(জ)",en:"Vulcanizing (Large)",bn:"ভলকানাইজিং (বড়)",dhaka:"2,000",other:"1,500"},
+  {cat:"workshop",sl:"33(ঝ)",en:"Vulcanizing (Small)",bn:"ভলকানাইজিং (ছোট)",dhaka:"1,000",other:"750"},
+  {cat:"workshop",sl:"33(ঞ)",en:"Automobile Repair (Large)",bn:"অটোমোবাইল মেরামতের দোকান/ওয়ার্কশপ (বড়)",dhaka:"2,000",other:"1,500"},
+  {cat:"workshop",sl:"33(ট)",en:"Automobile Repair (Small)",bn:"অটোমোবাইল মেরামতের দোকান/ওয়ার্কশপ (ছোট)",dhaka:"1,000",other:"750"},
+  {cat:"workshop",sl:"44(ক)",en:"Auto Mobile Repair (Large)",bn:"অটো মোবাইল মেরামতের দোকান/ওয়ার্কশপ (বড়)",dhaka:"1,500",other:"1,000"},
+  {cat:"workshop",sl:"44(খ)",en:"Auto Mobile Repair (Small)",bn:"অটো মোবাইল মেরামতের দোকান/ওয়ার্কশপ (ছোট)",dhaka:"1,000",other:"500"},
+  {cat:"workshop",sl:"45",en:"Tailor Shop",bn:"দর্জির দোকান",dhaka:"1,000",other:"700"},
+  {cat:"workshop",sl:"121(ক)",en:"Sawmill/Carpentry — With Machine",bn:"বাঁধাই কারখানা মেশিনসহ",dhaka:"1,000",other:"1,000"},
+  {cat:"workshop",sl:"121(খ)",en:"Sawmill/Carpentry — Large (no machine)",bn:"বাঁধাই কারখানা মেশিন ছাড়া (বড়)",dhaka:"1,000",other:"1,000"},
+  {cat:"workshop",sl:"121(গ)",en:"Sawmill/Carpentry — Small (no machine)",bn:"বাঁধাই কারখানা মেশিন ছাড়া (ছোট)",dhaka:"500",other:"500"},
+  {cat:"workshop",sl:"131(ক)",en:"Rickshaw Van Factory (Large)",bn:"রিকশা ও রিকশা ভ্যান তৈরী কারখানা (বড়)",dhaka:"2,000",other:"2,000"},
+  {cat:"workshop",sl:"131(খ)",en:"Rickshaw Van Factory (Small)",bn:"রিকশা ও রিকশা ভ্যান তৈরী কারখানা (ছোট)",dhaka:"1,000",other:"1,000"},
+  {cat:"workshop",sl:"158(ক)",en:"Printing — Manual Press",bn:"প্রিন্টিং/প্যাকেজিং — প্রেস হস্তচালিত",dhaka:"750",other:"750"},
+  {cat:"workshop",sl:"158(খ)",en:"Printing — Automatic Press",bn:"প্রিন্টিং/প্যাকেজিং — প্রেস অটোমেটিক",dhaka:"3,000",other:"3,000"},
+  {cat:"workshop",sl:"196",en:"Steel Goods Manufacturer",bn:"স্টিলের সামগ্রী তৈরীকারক",dhaka:"3,000",other:"3,000"},
+  {cat:"workshop",sl:"223",en:"Shoe Heel/Sole Manufacturer",bn:"জুতার হিল, সোল ইত্যাদি প্রস্তুতকারক",dhaka:"1,000",other:"1,000"},
+  {cat:"workshop",sl:"233",en:"Washing Plant",bn:"ওয়াশিং প্ল্যান্ট",dhaka:"3,000",other:"3,000"},
+  {cat:"workshop",sl:"263",en:"Mobile Servicing",bn:"মোবাইল সার্ভিসিং",dhaka:"1,500",other:"1,500"},
+  {cat:"workshop",sl:"268",en:"Motor Tailoring",bn:"মটর টেইলারিং",dhaka:"1,000",other:"1,000"},
+  {cat:"workshop",sl:"285",en:"Electronics Assembly",bn:"ইলেকট্রনিক্স সংযোজন",dhaka:"3,000",other:"3,000"},
+  {cat:"workshop",sl:"286",en:"Car Garage",bn:"গাড়ির গ্যারেজ",dhaka:"2,500",other:"2,500"},
+  {cat:"food",sl:"34(ক)",en:"Restaurant — Air Conditioned",bn:"রেস্তোরাঁ (শীতাতপ নিয়ন্ত্রিত)",dhaka:"2,500",other:"2,000"},
+  {cat:"food",sl:"34(খ)",en:"Restaurant — Non-AC",bn:"রেস্তোরাঁ (শীতাতপ নিয়ন্ত্রিত ব্যতিত)",dhaka:"1,000",other:"900"},
+  {cat:"food",sl:"34(গ)",en:"Floating Restaurant",bn:"ভ্রাম্যমাণ রেস্তোরাঁ",dhaka:"500",other:"500"},
+  {cat:"food",sl:"35(ক)",en:"Sweet Shop (Large)",bn:"মিষ্টির দোকান (বড়)",dhaka:"1,200",other:"1,200"},
+  {cat:"food",sl:"35(খ)",en:"Sweet Shop (Small)",bn:"মিষ্টির দোকান (ছোট)",dhaka:"1,000",other:"1,000"},
+  {cat:"food",sl:"36(ক)",en:"Confectionery (Large)",bn:"কনফেকশনারি (বড়)",dhaka:"2,000",other:"1,500"},
+  {cat:"food",sl:"36(খ)",en:"Confectionery (Small)",bn:"কনফেকশনারি (ছোট)",dhaka:"1,000",other:"750"},
+  {cat:"food",sl:"37",en:"Fast Food Shop",bn:"ফাস্ট ফুড শপ উৎপাদনকারী",dhaka:"3,000",other:"1,000"},
+  {cat:"food",sl:"38",en:"Ice Cream Shop",bn:"আইসক্রিম শপ উৎপাদনকারী/পরিবেশক",dhaka:"1,000",other:"500"},
+  {cat:"food",sl:"67",en:"Tok Doi / Malai / Mawa",bn:"টক দই/মালাই/মাওয়া",dhaka:"500",other:"500"},
+  {cat:"food",sl:"95",en:"Tea Shop",bn:"চা-পান দোকান",dhaka:"500",other:"500"},
+  {cat:"food",sl:"162",en:"Coffee House",bn:"কফি হাউস",dhaka:"500",other:"500"},
+  {cat:"food",sl:"163",en:"Dairy Products",bn:"ডেয়ারিজাত দ্রব্যাদি প্রস্তুত",dhaka:"1,000",other:"1,000"},
+  {cat:"food",sl:"171",en:"Ice Cream Production",bn:"আইসক্রিম প্রস্তুত",dhaka:"2,000",other:"2,000"},
+  {cat:"food",sl:"172",en:"Ice Production",bn:"বরফ প্রস্তুত",dhaka:"1,000",other:"1,000"},
+  {cat:"food",sl:"180",en:"Yogurt Production",bn:"দই প্রস্তুত",dhaka:"1,000",other:"1,000"},
+  {cat:"food",sl:"201",en:"Catering Business",bn:"ক্যাটারিং ব্যবসা",dhaka:"1,000",other:"1,000"},
+  {cat:"hotel",sl:"39(ক)",en:"5-Star Hotel",bn:"পাঁচ তারকা হোটেল",dhaka:"50,000",other:"25,000"},
+  {cat:"hotel",sl:"39(খ)",en:"4-Star Hotel",bn:"চার তারকা হোটেল",dhaka:"25,000",other:"20,000"},
+  {cat:"hotel",sl:"39(গ)",en:"3-Star Hotel (Central AC)",bn:"তিন তারকা হোটেল (কেন্দ্রীয়ভাবে শীতাতপ নিয়ন্ত্রিত)",dhaka:"20,000",other:"15,000"},
+  {cat:"hotel",sl:"39(ঘ)",en:"2-Star Hotel (Central AC)",bn:"দুই তারকা হোটেল (কেন্দ্রীয়ভাবে শীতাতপ নিয়ন্ত্রিত)",dhaka:"15,000",other:"10,000"},
+  {cat:"hotel",sl:"39(ঙ)",en:"1-Star Hotel (Central AC)",bn:"এক তারকা হোটেল (কেন্দ্রীয়ভাবে শীতাতপ নিয়ন্ত্রিত)",dhaka:"12,000",other:"8,000"},
+  {cat:"hotel",sl:"39(চ)",en:"Residential Hotel (Partial AC)",bn:"আবাসিক হোটেল (শীতাতপ নিয়ন্ত্রিত আংশিক)",dhaka:"10,000",other:"7,000"},
+  {cat:"hotel",sl:"39(ছ)",en:"Residential Hotel (Non-AC)",bn:"আবাসিক হোটেল (শীতাতপ নিয়ন্ত্রণ ব্যতিত)",dhaka:"5,000",other:"4,000"},
+  {cat:"hotel",sl:"39(জ)",en:"Guest House / Rest House (AC)",bn:"গেস্ট হাউজ/রেস্ট হাউজ (শীতাতপ নিয়ন্ত্রিত)",dhaka:"10,000",other:"5,000"},
+  {cat:"hotel",sl:"39(ঝ)",en:"Guest House / Rest House (Non-AC)",bn:"গেস্ট হাউজ/রেস্ট হাউজ (শীতাতপ নিয়ন্ত্রণ ব্যতিত)",dhaka:"5,000",other:"2,500"},
+  {cat:"hotel",sl:"39(ট)",en:"Private Hostel (1-50 seats)",bn:"বেসরকারি ছাত্রাবাস ১-৫০ সিট",dhaka:"5,000",other:"2,000"},
+  {cat:"hotel",sl:"39(ঠ)",en:"Private Hostel (51-100 seats)",bn:"বেসরকারি ছাত্রাবাস ৫১-১০০ সিট",dhaka:"6,000",other:"3,000"},
+  {cat:"hotel",sl:"39(ড)",en:"Private Hostel (100+ seats)",bn:"বেসরকারি ছাত্রাবাস ১০০ সিটের উর্ধ্ব",dhaka:"10,000",other:"5,000"},
+  {cat:"trade",sl:"40(ক)",en:"Cinema Hall (AC)",bn:"সিনেমা হল (শীতাতপ নিয়ন্ত্রিত)",dhaka:"3,000",other:"1,500"},
+  {cat:"trade",sl:"40(খ)",en:"Cinema Hall (Non-AC)",bn:"সিনেমা হল (শীতাতপ নিয়ন্ত্রণ ব্যতিত)",dhaka:"2,000",other:"1,000"},
+  {cat:"trade",sl:"41(ক)",en:"Community Center (AC)",bn:"কমিউনিটি সেন্টার (শীতাতপ নিয়ন্ত্রিত)",dhaka:"4,000",other:"3,000"},
+  {cat:"trade",sl:"41(খ)",en:"Community Center (Non-AC)",bn:"কমিউনিটি সেন্টার (শীতাতপ নিয়ন্ত্রণ ব্যতিত)",dhaka:"3,000",other:"2,000"},
+  {cat:"trade",sl:"42(ক)",en:"Decorator — Electric (Large)",bn:"ডেকোরেটর — ইলেক্ট্রিক (বড়)",dhaka:"1,000",other:"750"},
+  {cat:"trade",sl:"42(খ)",en:"Decorator — Electric (Small)",bn:"ডেকোরেটর — ইলেক্ট্রিক (ছোট)",dhaka:"750",other:"500"},
+  {cat:"trade",sl:"42(গ)",en:"Decorator — General (Large)",bn:"ডেকোরেটর — সাধারণ (বড়)",dhaka:"2,000",other:"1,000"},
+  {cat:"trade",sl:"42(ঘ)",en:"Decorator — General (Small)",bn:"ডেকোরেটর — সাধারণ (ছোট)",dhaka:"1,000",other:"500"},
+  {cat:"trade",sl:"46(ক)",en:"Vessel — Launch (Large)",bn:"নৌযান — লঞ্চ (বড়)",dhaka:"3,000",other:"3,000"},
+  {cat:"trade",sl:"46(খ)",en:"Vessel — Launch (Medium)",bn:"নৌযান — লঞ্চ (মাঝারি)",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"46(গ)",en:"Vessel — Launch (Small)",bn:"নৌযান — লঞ্চ (ছোট)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"46(ঙ)",en:"Cargo Boat (30 HP)",bn:"যান্ত্রিক কার্গো বোট (ত্রিশ অশ্ব ক্ষমতাসম্পন্ন)",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"46(চ)",en:"Cargo Boat (30+ HP)",bn:"যান্ত্রিক কার্গো বোট (ত্রিশ অশ্ব উর্ধ ধারণ ক্ষমতাসম্পন্ন)",dhaka:"3,000",other:"3,000"},
+  {cat:"trade",sl:"46(ছ)",en:"Cargo (500-1,000 kg)",bn:"কার্গো (৫০০ কেজি হতে ১,০০০ কেজি পর্যন্ত)",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"46(জ)",en:"Cargo (1,000-5,000 kg)",bn:"কার্গো (১,০০০ কেজি হতে ৫,০০০ কেজি পর্যন্ত)",dhaka:"750",other:"750"},
+  {cat:"trade",sl:"46(ঝ)",en:"Cargo (5,000 kg+)",bn:"কার্গো (৫,০০০ কেজি হতে তদূর্ধ্ব ক্ষমতা সম্পন্ন)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"47(ক)",en:"Shipbuilding — International",bn:"জাহাজ নির্মাণ — আন্তর্জাতিক প্রতিষ্ঠান",dhaka:"50,000",other:"50,000"},
+  {cat:"trade",sl:"47(খ)",en:"Shipbuilding — National",bn:"জাহাজ নির্মাণ — জাতীয় প্রতিষ্ঠান",dhaka:"20,000",other:"20,000"},
+  {cat:"trade",sl:"48(ক)",en:"Wholesale Market — Rice/Dal/Oil/Flour",bn:"আড়ত — ধান/চাল/ডাল/তেল/ময়দা/আটা",dhaka:"1,000",other:"700"},
+  {cat:"trade",sl:"48(খ)",en:"Wholesale Market — Brick/Sand",bn:"আড়ত — ইট/বালু",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"48(গ)",en:"Wholesale Market — Fruit/Raw Materials",bn:"আড়ত — ফল/কাঁচা মাল",dhaka:"1,000",other:"500"},
+  {cat:"trade",sl:"48(ঘ)",en:"Wholesale Market — Poultry",bn:"আড়ত — হাঁস/মুরগি",dhaka:"500",other:"300"},
+  {cat:"trade",sl:"48(ঙ)",en:"Wholesale Market — Fish",bn:"আড়ত — মাছ",dhaka:"3,000",other:"2,000"},
+  {cat:"trade",sl:"48(চ)",en:"Wholesale Market — Other Goods",bn:"আড়ত — অন্যান্য মালামালের আড়ত",dhaka:"1,000",other:"500"},
+  {cat:"trade",sl:"49(ক)",en:"Brand Furniture (NAVANA/OTOBI/HATIL)",bn:"ব্র্যান্ড ফার্নিচার (NAVANA, OTOBI, HATIL প্রভৃতি)",dhaka:"20,000",other:"20,000"},
+  {cat:"trade",sl:"49(গ)",en:"Furniture — Wood/Steel/Cane (Large)",bn:"কাঠ/স্টিল/বেত ফার্নিচার (বড়)",dhaka:"3,000",other:"3,000"},
+  {cat:"trade",sl:"49(ঘ)",en:"Furniture — Wood/Steel/Cane (Small)",bn:"কাঠ/স্টিল/বেত ফার্নিচার (ছোট)",dhaka:"3,000",other:"3,000"},
+  {cat:"trade",sl:"49(ঙ)",en:"Furniture — Partex/Plastic/Plywood",bn:"পারটেক্স/প্লাস্টিক/প্লাইউড/কাঠের বিকল্প",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"50(ক)",en:"Hardware — Paint (Agency)",bn:"হার্ডওয়ার — রং (এজেন্সি)",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"50(খ)",en:"Hardware — Paint (Retail)",bn:"হার্ডওয়ার — রং (খুচরা)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"50(গ)",en:"Hardware Items",bn:"হার্ডওয়ার সামগ্রী",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"50(ঙ)",en:"Mosaic / Tiles (Large)",bn:"মোজাইক/টাইলস (বড়)",dhaka:"1,200",other:"1,200"},
+  {cat:"trade",sl:"50(ছ)",en:"Sanitary Ware (Large)",bn:"স্যানিটারী ওয়ার (বড়)",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"50(জ)",en:"Sanitary Ware (Small)",bn:"স্যানিটারী ওয়ার (ছোট)",dhaka:"2,500",other:"2,500"},
+  {cat:"trade",sl:"51(ক)",en:"Wholesale — Cloth (Saree/Lungi)",bn:"পাইকারী বিক্রেতা — কাপড় (শাড়ী/লুঙ্গি)",dhaka:"1,500",other:"1,500"},
+  {cat:"trade",sl:"51(খ)",en:"Wholesale — Ready-made Garments",bn:"পাইকারী — তৈরী পোশাক",dhaka:"1,500",other:"1,500"},
+  {cat:"trade",sl:"51(গ)",en:"Wholesale — Rice/Dal/Sugar/Oil/Milk",bn:"পাইকারী — চাল/ডাল/ময়দা/আটা/চিনি/তেল/দুধ",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"51(ঘ)",en:"Retail — Rice/Dal/Sugar/Oil/Milk",bn:"খুচরা — চাল/ডাল/ময়দা/আটা/চিনি/তেল/দুধ",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"51(ঙ)",en:"Cosmetics / Stationery (Large)",bn:"কসমেটিকস/স্টেশনারী (বড়)",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"51(চ)",en:"Cosmetics / Stationery (Small)",bn:"কসমেটিকস/স্টেশনারী (ছোট)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"51(ছ)",en:"Iron Goods / Hardware (Large)",bn:"লৌহজাত দ্রব্যাদি (বড়)",dhaka:"4,000",other:"4,000"},
+  {cat:"trade",sl:"51(জ)",en:"Iron Goods / Hardware (Small)",bn:"লৌহজাত দ্রব্যাদি (ছোট)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"51(ঝ)",en:"Mosquito Net Wholesale",bn:"মশারি বিক্রেতা (পাইকারী)",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"51(ট)",en:"Cottage Industry (Large)",bn:"কুটির শিল্প (বড়)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"51(ঠ)",en:"Cottage Industry (Small)",bn:"কুটির শিল্প (ছোট)",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"51(ড)",en:"Chain Shop",bn:"Chain শপ (আড়ৎ, গ্রামিন মেলা প্রভৃতি)",dhaka:"5,000",other:"5,000"},
+  {cat:"trade",sl:"52(ক)",en:"Crockery — Ceramic (Large)",bn:"তৈজসপত্র — সিরামিক (বড়)",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"52(খ)",en:"Crockery — Ceramic (Small)",bn:"তৈজসপত্র — সিরামিক (ছোট)",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"52(গ)",en:"Crockery — Melamine (Large)",bn:"তৈজসপত্র — মেলামাইন (বড়)",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"52(ঘ)",en:"Crockery — Melamine (Small)",bn:"তৈজসপত্র — মেলামাইন (ছোট)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"52(ঙ)",en:"Crockery — Aluminium (Large)",bn:"তৈজসপত্র — এলুমিনিয়াম (বড়)",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"52(চ)",en:"Crockery — Aluminium (Small)",bn:"তৈজসপত্র — এলুমিনিয়াম (ছোট)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"52(ছ)",en:"Crockery — Brass/Bell Metal (Large)",bn:"তৈজসপত্র — পিতল/কাঁসা (বড়)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"52(জ)",en:"Crockery — Brass/Bell Metal (Small)",bn:"তৈজসপত্র — পিতল/কাঁসা (ছোট)",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"55(ক)",en:"Jewellery (with showroom)",bn:"জুয়েলারী (শো রুম সহ)",dhaka:"8,000",other:"8,000"},
+  {cat:"trade",sl:"55(খ)",en:"Jewellery (without showroom)",bn:"জুয়েলারী (শো রুম ছাড়া)",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"55(গ)",en:"Jewellery Repair",bn:"জুয়েলারী মেরামত",dhaka:"1,500",other:"1,500"},
+  {cat:"trade",sl:"55(ঘ)",en:"Imitation Jewellery (Large)",bn:"অলংকার — এমিটেশন (বড়)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"55(ঙ)",en:"Imitation Jewellery (Small)",bn:"অলংকার — এমিটেশন (ছোট)",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"55(চ)",en:"Jewellery Manufacturer",bn:"অলংকার নির্মাতা",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"55(ছ)",en:"Showpieces (Large/Small)",bn:"বিভিন্ন প্রকার শো-পিস (বড়/ছোট)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"56(ক)",en:"Film Production — Full Length",bn:"চলচ্চিত্র নির্মাতা — পূর্ণ দৈর্ঘ্য",dhaka:"3,000",other:"2,000"},
+  {cat:"trade",sl:"56(খ)",en:"Film Production — Short Length",bn:"চলচ্চিত্র নির্মাতা — স্বল্প দৈর্ঘ্য",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"56(ঘ)",en:"Advertisement Production",bn:"বিজ্ঞাপন নির্মাতা প্রতিষ্ঠান",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"56(ঙ)",en:"Advertisement Agency",bn:"বিজ্ঞাপন প্রচারণী প্রতিষ্ঠান",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"57(ক)",en:"Library / Publication House",bn:"লাইব্রেরী/প্রকাশনা সংস্থা",dhaka:"5,000",other:"5,000"},
+  {cat:"trade",sl:"57(খ)",en:"Book Seller (Large)",bn:"বই বিক্রেতা (বড়)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"57(গ)",en:"Book Seller (Small)",bn:"বই বিক্রেতা (ছোট)",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"58(ক)",en:"Card/Poster Seller (Large)",bn:"কার্ড/পোস্টার বিক্রেতা (বড়)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"58(খ)",en:"Card/Poster Seller (Small)",bn:"কার্ড পোস্টার বিক্রেতা (ছোট)",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"59(ক)",en:"Stationery (Large)",bn:"স্টেশনারী সামগ্রী (বড়)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"59(খ)",en:"Stationery (Small)",bn:"স্টেশনারী সামগ্রী (ছোট)",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"60",en:"Photo Studio / Ammonia Print",bn:"ফেটোস্ট্যাট/এ্যামোনিয়া প্রিন্ট",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"61(ক)",en:"Photo Studio Lab",bn:"ফেটো স্টুডিও ল্যাব",dhaka:"700",other:"500"},
+  {cat:"trade",sl:"61(খ)",en:"Photo Studio (Large)",bn:"ফেটো স্টুডিও (বড়)",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"61(গ)",en:"Photo Studio (Small)",bn:"ফেটো স্টুডিও (ছোট)",dhaka:"300",other:"300"},
+  {cat:"trade",sl:"62",en:"Video Games Shop",bn:"ভিডিও গেমসের দোকান",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"63",en:"Video/VCD/CD/Audio Cassette (Large)",bn:"ভিডিও/ভিসিডি/সিডি/অডিও ক্যাসেট (বড়)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"64",en:"Video/VCD/CD/Audio Cassette (Small)",bn:"ভিডিও/ভিসিডি/সিডি/অডিও ক্যাসেট (ছোট)",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"65",en:"Musical Instruments (Large)",bn:"বাদ্য যন্ত্র (বড়)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"66",en:"Musical Instruments (Small)",bn:"বাদ্য যন্ত্র (ছোট)",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"68",en:"Vegetable Seeds",bn:"শস্যবীজ (বড়/ছোট)",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"69",en:"International Courier (e.g. DHL)",bn:"কুরিয়ার/পার্সেল — International (e.g. DHL)",dhaka:"25,000",other:"25,000"},
+  {cat:"trade",sl:"70",en:"Domestic Courier — Goods",bn:"কুরিয়ার/পার্সেল (অভ্যন্তরীণ ও পণ্য পরিবহনকারী)",dhaka:"3,000",other:"2,000"},
+  {cat:"trade",sl:"71",en:"Domestic Courier — Letter",bn:"কুরিয়ার/পার্সেল (অভ্যন্তরীণ ও পত্র পরিবহনকারী)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"72",en:"Dish Antenna / Cable TV Operator",bn:"ডিশ এন্টিনা (ক্যাবল টিভি অপারেটর)",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"73",en:"Phone/Fax/Internet/Cyber Cafe (Large)",bn:"ফোন/ফ্যাক্স/ইন্টারনেট/পিএবিএক্স/সাইবার ক্যাফে (বড়)",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"74",en:"Phone/Fax/Internet/Cyber Cafe (Small)",bn:"ফোন/ফ্যাক্স/ইন্টারনেট/পিএবিএক্স/সাইবার ক্যাফে (ছোট)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"75",en:"Glass / Photo Frame Shop",bn:"গ্লাস/ছবি বাঁধাই দোকান",dhaka:"1,000",other:"500"},
+  {cat:"trade",sl:"76",en:"Earthenware",bn:"যূৎ পাত্র",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"77",en:"Carpet",bn:"কার্পেট",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"78",en:"Paan Supari",bn:"পান সুপারি",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"79",en:"Cow/Poultry/Egg/Fish",bn:"গো/হাঁস/মুরগি/ডিম/মাছ",dhaka:"5,000",other:"5,000"},
+  {cat:"trade",sl:"80",en:"Security Service",bn:"সিকিউরিটি সার্ভিস",dhaka:"1,500",other:"1,000"},
+  {cat:"trade",sl:"81",en:"Dairy / Poultry Farm (Large)",bn:"ডেইরি/পোল্ট্রিফার্ম (বড়)",dhaka:"1,500",other:"1,000"},
+  {cat:"trade",sl:"82",en:"Dairy / Poultry Farm (Small)",bn:"ডেইরি/পোল্ট্রিফার্ম (ছোট)",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"83",en:"Clock/Watch Shop (Agency/Large)",bn:"ঘড়ির দোকান (এজেন্সি/বড়)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"84",en:"Clock/Watch Shop (Small)",bn:"ঘড়ির দোকান (ছোট)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"85",en:"Sports Goods (Large)",bn:"খেলাধুলার সামগ্রী (বড়)",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"86",en:"Sports Goods (Small)",bn:"খেলাধুলার সামগ্রী (ছোট)",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"87",en:"Animal/Fish Food Agency (Large)",bn:"পশু/মৎস্য খাদ্য এজেন্সি (বড়)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"88",en:"Animal/Fish Food Agency (Small)",bn:"পশু/মৎস্য খাদ্য এজেন্সি (ছোট)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"89(ক)",en:"MS Rod/Cement/CIA Sheet — Producer",bn:"এমএস রড/সিমেন্ট/সিআই শীট — উৎপাদনকারী",dhaka:"5,000",other:"5,000"},
+  {cat:"trade",sl:"89(খ)",en:"MS Rod/Cement/CIA Sheet — Large Shop",bn:"এমএস রড/সিমেন্ট/সিআই শীট — বড় দোকান",dhaka:"3,000",other:"3,000"},
+  {cat:"trade",sl:"89(গ)",en:"MS Rod/Cement/CIA Sheet — Medium Shop",bn:"এমএস রড/সিমেন্ট/সিআই শীট — মাঝারী দোকান",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"89(ঘ)",en:"MS Rod/Cement/CIA Sheet — Small Shop",bn:"এমএস রড/সিমেন্ট/সিআই শীট — ছোট দোকান",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"90(ক)",en:"Retail — Vegetables",bn:"নিত্য প্রয়োজনীয় সামগ্রী — তরিতরকারি",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"90(খ)",en:"Retail — Snacks/Chira/Muri",bn:"নিত্য প্রয়োজনীয় সামগ্রী — চুড়/চিড়া/মুড়ি",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"90(গ)",en:"Retail — General Store (Mudi)",bn:"নিত্য প্রয়োজনীয় সামগ্রী — মুদি",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"91(ক)",en:"Ready-made Garments (200+ sq ft)",bn:"তৈরী পোশাক (২০০ বর্গফুটের উর্ধ্ব)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"91(খ)",en:"Ready-made Garments (Below 200 sq ft)",bn:"তৈরী পোশাক (২০০ বর্গফুটের নিচে)",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"92(ক)",en:"Saree / Cloth (Large)",bn:"শাড়ী/থান কাপড় (বড়)",dhaka:"3,000",other:"3,000"},
+  {cat:"trade",sl:"92(খ)",en:"Saree / Cloth (Medium)",bn:"শাড়ী/থান কাপড় (মাঝারী)",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"92(গ)",en:"Saree / Cloth (Small)",bn:"শাড়ী/থান কাপড় (ছোট)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"93(ক)",en:"Shoe Shop — Wholesale (Large)",bn:"জুতার দোকান — পাইকারী (বড়)",dhaka:"2,000",other:"1,000"},
+  {cat:"trade",sl:"93(খ)",en:"Shoe Shop — Retail (Small)",bn:"জুতার দোকান — খুচরা (ছোট)",dhaka:"1,500",other:"500"},
+  {cat:"trade",sl:"94",en:"Flower Shop",bn:"ফেলর দোকান",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"96(ক)",en:"Nursery (Large)",bn:"নার্সারি (বড়)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"96(খ)",en:"Nursery (Small)",bn:"নার্সারি (ছোট)",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"97",en:"Flower Seller",bn:"ফুল বিক্রেতা",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"98",en:"Leather Suitcase / Bag",bn:"চামড়ার সুটকেস/ব্যাগ",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"99(ক)",en:"Warehouse",bn:"ওয়্যার হাউজ",dhaka:"10,000",other:"10,000"},
+  {cat:"trade",sl:"99(খ)",en:"Buying House",bn:"বায়িং হাউজ",dhaka:"5,000",other:"5,000"},
+  {cat:"trade",sl:"100(ক)",en:"Departmental Store — Super/Mega Mall",bn:"সুপার শপ/মেগা মল",dhaka:"3,000",other:"2,000"},
+  {cat:"trade",sl:"100(খ)",en:"Departmental Store — Large/AC Mall",bn:"বড়/এসি শপিং মল",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"100(গ)",en:"Departmental Store — Medium",bn:"মাঝারি ডিপার্টমেন্টাল স্টোর",dhaka:"1,500",other:"1,500"},
+  {cat:"trade",sl:"100(ঘ)",en:"Departmental Store — Small",bn:"ছোট ডিপার্টমেন্টাল স্টোর",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"101(ক)",en:"Laundry — Automatic (Large)",bn:"লড়ি অটোমেটিক (বড়)",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"101(খ)",en:"Laundry — Automatic (Small)",bn:"লড়ি অটোমেটিক (ছোট)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"101(গ)",en:"Laundry — Standard",bn:"লড়ি সাধারণ",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"102(ক)",en:"Motor Parts / Lubricant (Large)",bn:"মটর পার্টস/লুব্রিকেন্ট (বড়)",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"102(খ)",en:"Motor Parts / Lubricant (Small)",bn:"মটর পার্টস/লুব্রিকেন্ট (ছোট)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"103(ক)",en:"Tyre/Tube Seller (Large)",bn:"টায়ার টিউব বিক্রেতা (বড়)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"103(খ)",en:"Tyre/Tube Seller (Small)",bn:"টায়ার টিউব বিক্রেতা (ছোট)",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"103(গ)",en:"Tyre/Tube Dealership",bn:"টায়ার টিউব ডিলারশীপ",dhaka:"5,000",other:"5,000"},
+  {cat:"trade",sl:"104(ক)",en:"Battery (Large)",bn:"ব্যাটারী (বড়)",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"104(খ)",en:"Battery (Small)",bn:"ব্যাটারী (ছোট)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"105(ক)",en:"Bedding Store (Large)",bn:"বেডিং স্টোর (বড়)",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"105(খ)",en:"Bedding Store (Small)",bn:"বেডিং স্টোর (ছোট)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"106(ক)",en:"TV/Fridge/Electronics — Agency",bn:"টিভি, ফ্রিজ ইলেক্ট্রনিক — দোকান/এজেন্সি",dhaka:"5,000",other:"5,000"},
+  {cat:"trade",sl:"106(খ)",en:"TV/Fridge/Electronics — Large",bn:"টিভি, ফ্রিজ ইলেক্ট্রনিক — বড় (এজেন্সি বাদে)",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"106(গ)",en:"TV/Fridge/Electronics — Small",bn:"টিভি, ফ্রিজ ইলেক্ট্রনিক — ছোট (এজেন্সি বাদে)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"106(ঘ)",en:"TV/Fridge/Electronics — Repair Only",bn:"টিভি, ফ্রিজ ইলেক্ট্রনিক — শুধু মেরামতের দোকান",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"107(ক)",en:"Electrical Equipment (Large)",bn:"বৈদ্যুতিক সরঞ্জাম বিক্রেতা (বড়)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"107(খ)",en:"Electrical Equipment (Small)",bn:"বৈদ্যুতিক সরঞ্জাম বিক্রেতা (ছোট)",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"108(ক)",en:"Machine Tools & Equipment (Large)",bn:"মেশিন টুলস এন্ড ইকুইপমেন্ট (বড়)",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"108(খ)",en:"Machine Tools & Equipment (Small)",bn:"মেশিন টুলস এন্ড ইকুইপমেন্ট (ছোট)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"110",en:"Bicycle Seller",bn:"বাই সাইকেল বিক্রেতা",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"111(ক)",en:"Bicycle Parts (Large)",bn:"বাই সাইকেল পার্টস বিক্রেতা (বড়)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"111(খ)",en:"Bicycle Parts (Small)",bn:"বাই সাইকেল পার্টস বিক্রেতা (ছোট)",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"112(ক)",en:"Rexine (Large)",bn:"রেকসিন (বড়)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"112(খ)",en:"Rexine (Small)",bn:"রেকসিন (ছোট)",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"113(ক)",en:"Foam (Large)",bn:"ফোম (বড়)",dhaka:"3,000",other:"3,000"},
+  {cat:"trade",sl:"113(খ)",en:"Foam (Medium)",bn:"ফোম (মাঝারি)",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"113(গ)",en:"Foam (Small)",bn:"ফোম (ছোট)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"114(ক)",en:"Ceuting — Dealer",bn:"চেউটিন — ডিলার",dhaka:"3,000",other:"3,000"},
+  {cat:"trade",sl:"114(খ)",en:"Ceuting — Large Seller",bn:"চেউটিন বিক্রেতা (বড়)",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"114(গ)",en:"Ceuting — Small Seller",bn:"চেউটিন বিক্রেতা (ছোট)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"115(ক)",en:"Plain Sheet — Dealer",bn:"প্লেন শীট — ডিলার",dhaka:"3,000",other:"3,000"},
+  {cat:"trade",sl:"115(খ)",en:"Plain Sheet — Large Seller",bn:"প্লেন শীট বিক্রেতা (বড়)",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"115(গ)",en:"Plain Sheet — Small Seller",bn:"প্লেন শীট বিক্রেতা (ছোট)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"116",en:"Petrol Pump / CNG Station",bn:"পেট্রোল পাম্প/সিএনজি স্টেশন/ফিলিং স্টেশন",dhaka:"5,000",other:"3,000"},
+  {cat:"trade",sl:"117(ক)",en:"LPG Gas Dealer",bn:"এলপি গ্যাস বিক্রেতা ডিলার",dhaka:"7,500",other:"7,500"},
+  {cat:"trade",sl:"117(খ)",en:"LPG Gas Retailer (Large)",bn:"এলপি গ্যাস বিক্রেতা (বড়)",dhaka:"3,000",other:"3,000"},
+  {cat:"trade",sl:"117(গ)",en:"LPG Gas Retailer (Small)",bn:"এলপি গ্যাস বিক্রেতা (ছোট)",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"118(ক)",en:"Aquarium Fish/Pet (Large)",bn:"এ্যাকুরিয়াম মাছ/পশু বিক্রেতা (বড়)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"118(খ)",en:"Aquarium Fish/Pet (Small)",bn:"এ্যাকুরিয়াম মাছ/পশু বিক্রেতা (ছোট)",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"120(ক)",en:"Eyeglass Shop (Large)",bn:"চশমার দোকান (বড়)",dhaka:"1,500",other:"1,500"},
+  {cat:"trade",sl:"120(খ)",en:"Eyeglass Shop (Small)",bn:"চশমার দোকান (ছোট)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"122(ক)",en:"Thread/Yarn Wholesale (Large)",bn:"সুতার ব্যবসায়ী/পরিবেশক পাইকারী (বড়)",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"122(খ)",en:"Thread/Yarn Wholesale (Small)",bn:"সুতার ব্যবসায়ী/পরিবেশক পাইকারী (ছোট)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"123",en:"Newspaper Stall",bn:"সংবাদপত্রের স্টল",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"129(ক)",en:"Old/Second-hand Clothes (Large)",bn:"পুরাতন কাপড়ের দোকান বড় (পাইকারী)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"129(খ)",en:"Old/Second-hand Clothes (Small)",bn:"পুরাতন কাপড়ের দোকান ছোট (খুচরা)",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"130(ক)",en:"Rectified Spirit — Dealer",bn:"রেকটিফাইড স্পিরিটের দোকান — ডিলার",dhaka:"10,000",other:"10,000"},
+  {cat:"trade",sl:"130(খ)",en:"Rectified Spirit — Seller",bn:"রেকটিফাইড স্পিরিটের বিক্রেতা",dhaka:"7,500",other:"7,500"},
+  {cat:"trade",sl:"132",en:"Liquor Shop / Bar (Licensed)",bn:"মদের দোকান/বার (লাইসেন্সধারী)",dhaka:"20,000",other:"20,000"},
+  {cat:"trade",sl:"133",en:"Mike Rental Shop",bn:"মাইক ভাড়ার দোকান",dhaka:"750",other:"750"},
+  {cat:"trade",sl:"134",en:"Computer Sales Shop",bn:"কম্পিউটার বিক্রয় দোকান",dhaka:"900",other:"900"},
+  {cat:"trade",sl:"135",en:"Stamp Vendor",bn:"স্ট্যাম্প ভেন্ডার",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"136(ক)",en:"Mobile Parts/Accessories (Large Retailer)",bn:"মোবাইল পার্টস/এক্সেসরিজ বিক্রেতা (বড়)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"136(খ)",en:"Mobile Parts/Accessories (Small Retailer)",bn:"মোবাইল পার্টস/এক্সেসরিজ বিক্রেতা (ছোট)",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"136(গ)",en:"Mobile Phone Agency (Large)",bn:"মোবাইল ফোন/এক্সেরিজ এজেন্সি (বড়)",dhaka:"5,000",other:"5,000"},
+  {cat:"trade",sl:"136(ঘ)",en:"Mobile Phone Agency (Medium)",bn:"মোবাইল ফোন/এক্সেরিজ এজেন্সি (মাঝারী)",dhaka:"3,000",other:"3,000"},
+  {cat:"trade",sl:"136(ঙ)",en:"Mobile Phone Agency (Small)",bn:"মোবাইল ফোন/এক্সেরিজ এজেন্সি (ছোট)",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"137",en:"Money Lender",bn:"মানি লন্ডার",dhaka:"5,000",other:"5,000"},
+  {cat:"trade",sl:"138(ক)",en:"Pesticide — Agency",bn:"সার/কিট নাশক ঔষধ বিক্রেতা — এজেন্সি",dhaka:"5,000",other:"5,000"},
+  {cat:"trade",sl:"138(খ)",en:"Pesticide — Retail",bn:"সার/কিট নাশক ঔষধ বিক্রেতা — খুচরা",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"140",en:"Brick Kiln",bn:"ইট ভাটা",dhaka:"4,000",other:"4,000"},
+  {cat:"trade",sl:"142",en:"Cigarette/Bidi — Wholesale/Agency",bn:"সিগারেট, বিড়ি (পাইকারী/এজেন্সি)",dhaka:"5,000",other:"5,000"},
+  {cat:"trade",sl:"143",en:"Timber Business",bn:"বিভিন্ন মাপের চেরাই কাঠের ব্যবসা",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"144",en:"Handicrafts",bn:"কারুপণ্য/হস্তশিল্প",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"145",en:"Bakery Factory",bn:"বেকারী কারখানা",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"146",en:"TV Parts & Antenna Seller (Small)",bn:"টিভি পার্টস ও এন্টিনা বিক্রেতা (ছোট)",dhaka:"750",other:"750"},
+  {cat:"trade",sl:"147",en:"Fish Hatchery",bn:"মৎস্য হ্যাচারী",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"148",en:"Garments Accessories",bn:"গার্মেন্টস এক্সেসরিজ ব্যবসা",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"149(ক)",en:"Brick/Sand/Cement Retail (Large)",bn:"ইট, বালু সিমেন্ট ও পাথর ব্যবসা খুচরা (বড়)",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"149(খ)",en:"Brick/Sand/Cement Retail (Small)",bn:"ইট, বালু সিমেন্ট ও পাথর ব্যবসা খুচরা (ছোট)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"151",en:"Gun / Firearm Shop",bn:"বন্দুক ক্রয়-বিক্রয় ও মেরামতের দোকান",dhaka:"3,000",other:"3,000"},
+  {cat:"trade",sl:"159",en:"Ship Breaking",bn:"শিপ ব্রেকিং",dhaka:"25,000",other:"25,000"},
+  {cat:"trade",sl:"161",en:"Marriage Media",bn:"ম্যারেজ মিডিয়া",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"165",en:"Raw Leather Storage",bn:"কাঁচা চামড়া মজুদ",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"166",en:"Processed Leather Storage",bn:"পাকা চামড়া মজুদ",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"167",en:"Chatai Retail Seller",bn:"চাটাই খুচরা বিক্রেতা",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"168",en:"Firewood Seller",bn:"জ্বালানী কাঠ বিক্রেতা",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"169",en:"Chatai/Golpata/Bamboo Wholesale",bn:"চাটাই, গোলপাতা, বাঁশ পাইকারী",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"170",en:"Firewood Wholesale (Storage)",bn:"জ্বালানী কাঠ পাইকারী (মজুদ)",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"173",en:"Lime Storage",bn:"চুন মজুদ",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"174",en:"Soap Production",bn:"সাবান প্রস্তুত",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"175",en:"Charcoal Fuel",bn:"চিটাগুড় জ্বালানী",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"177",en:"Cloth Dyeing",bn:"কাপড় রং করা",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"179",en:"Fuel Oil",bn:"জ্বালানী তেল",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"181",en:"Meat Storage",bn:"মাংস মজুদ",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"182",en:"Coal/Stone Storage",bn:"কয়লা/পাথর মজুদ",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"183",en:"Brick/Sand/Lime Storage",bn:"ইট, বালি, খোয়া মজুদ",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"185",en:"Bone Storage",bn:"হাড় মজুদ",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"187",en:"Fashion House",bn:"ফ্যাশন হাউস",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"188",en:"ATM Booth",bn:"এটিএম বুথ",dhaka:"5,000",other:"5,000"},
+  {cat:"trade",sl:"193",en:"Hosiery",bn:"হোসিয়ারি",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"194",en:"Plastic Beads Seller",bn:"প্লাস্টিক দানা/কুচা বিক্রেতা",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"195",en:"Imitation Jewellery Manufacturer",bn:"ইমিটেশন জুয়েলারি তৈরিকারক",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"197",en:"Interior Decoration",bn:"অভ্যন্তরীণ সাজসজ্জা ব্যবসা",dhaka:"5,000",other:"5,000"},
+  {cat:"trade",sl:"203",en:"Herbal Goods Seller",bn:"হারবাল সামগ্রী বিক্রেতা",dhaka:"5,000",other:"5,000"},
+  {cat:"trade",sl:"204",en:"Paper Business",bn:"কাগজের ব্যবসা",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"206",en:"Toy Seller",bn:"খেলনা বিক্রেতা",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"208",en:"Water Bottling",bn:"পানি বোতলজাতকরণ",dhaka:"1,500",other:"1,500"},
+  {cat:"trade",sl:"210",en:"IPAS / Stabilizer Seller",bn:"আইপিএস, স্টেবিলাইজার বিক্রেতা",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"213",en:"Screen Print",bn:"স্ক্রীন প্রিন্ট",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"214",en:"Thread Coning",bn:"সুতা ক্যানিং",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"215",en:"Signboard Writing Company",bn:"সাইনবোর্ড লেখনী প্রতিষ্ঠান",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"219",en:"Meat Seller",bn:"মাংস বিক্রেতা",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"220",en:"Shrimp Seller",bn:"শুটকি বিক্রেতা",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"221",en:"Fish Processing",bn:"মৎস্য প্রক্রিয়াকরণ",dhaka:"8,000",other:"8,000"},
+  {cat:"trade",sl:"225",en:"Car Showroom",bn:"গাড়ির শো-রুম",dhaka:"25,000",other:"25,000"},
+  {cat:"trade",sl:"228",en:"Limestone Seller",bn:"চুনাপাথর বিক্রেতা",dhaka:"5,000",other:"5,000"},
+  {cat:"trade",sl:"230",en:"Old Paper Trading",bn:"পুরাতন কাগজ ক্রয়-বিক্রয়",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"231",en:"Gas Stove Seller",bn:"গ্যাসের চুলা বিক্রেতা",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"232",en:"Scientific/Medical Equipment Seller",bn:"বৈজ্ঞানিক/ডাক্তারী যন্ত্রপাতি বিক্রেতা",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"234",en:"Tiles Seller",bn:"টাইলস বিক্রেতা",dhaka:"3,000",other:"3,000"},
+  {cat:"trade",sl:"235",en:"Plastic Crockery Seller",bn:"প্লাস্টিকের তৈজসপত্র বিক্রেতা",dhaka:"1,500",other:"1,500"},
+  {cat:"trade",sl:"236",en:"Mobile Money Recharge",bn:"মোবাইল ফোনে টাকা রিচার্জ",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"240",en:"Used Plastic Seller",bn:"পুরাতন প্লাস্টিক বিক্রেতা",dhaka:"750",other:"750"},
+  {cat:"trade",sl:"241",en:"Used/Cut Cloth Seller",bn:"পুরাতন কাটা কাপড় বিক্রেতা",dhaka:"750",other:"750"},
+  {cat:"trade",sl:"242",en:"Lace / Zari Seller",bn:"জরি বিক্রেতা",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"243",en:"Rod Bank",bn:"রাড ব্যাংক",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"244",en:"Shipping Business",bn:"শিপিং ব্যবসা",dhaka:"7,500",other:"7,500"},
+  {cat:"trade",sl:"245",en:"Ribbon / Tape Seller",bn:"ফিতা বিক্রেতা",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"247",en:"Embroidery Business",bn:"এমব্রয়ডারী ব্যবসা",dhaka:"5,000",other:"5,000"},
+  {cat:"trade",sl:"248",en:"Bullion / Gold Trade",bn:"বুলিয়ানী ব্যবসা",dhaka:"10,000",other:"10,000"},
+  {cat:"trade",sl:"249",en:"Scrap Business",bn:"ভাঙারী ব্যবসা",dhaka:"1,000",other:"1,000"},
+  {cat:"trade",sl:"252",en:"Sewing Machine Seller",bn:"সেলাই মেশিন বিক্রেতা",dhaka:"1,500",other:"1,500"},
+  {cat:"trade",sl:"254",en:"Variety Store",bn:"ভ্যারাইটি স্টোর",dhaka:"1,500",other:"1,500"},
+  {cat:"trade",sl:"255",en:"Oil Seller",bn:"তেল বিক্রেতা",dhaka:"1,500",other:"1,500"},
+  {cat:"trade",sl:"257",en:"Marble Seller",bn:"মার্বেল বিক্রেতা",dhaka:"5,000",other:"5,000"},
+  {cat:"trade",sl:"269",en:"Perfume Seller",bn:"পারফিউম বিক্রেতা",dhaka:"1,500",other:"1,500"},
+  {cat:"trade",sl:"271",en:"Computer Hardware/Accessories",bn:"কম্পিউটার হার্ডওয়ার/এক্সেসরিজ",dhaka:"1,500",other:"1,500"},
+  {cat:"trade",sl:"278",en:"Agricultural Goods Seller",bn:"কৃষিজ পণ্য বিক্রেতা",dhaka:"750",other:"750"},
+  {cat:"trade",sl:"280",en:"Cap/Attar/Tasbi/Prayer Mat Seller",bn:"টুপি/আতর/তজবি/জায়নামাজ বিক্রেতা",dhaka:"500",other:"500"},
+  {cat:"trade",sl:"283",en:"Cokeries",bn:"কোকারিজ",dhaka:"2,000",other:"2,000"},
+  {cat:"trade",sl:"293",en:"Garments Rejected Goods",bn:"গার্মেন্টস বাতিল মালামাল বিক্রয়",dhaka:"1,000",other:"1,000"},
+  {cat:"health",sl:"53(ক)",en:"Beauty Parlour (AC)",bn:"বিউটি পার্লার (শীতাতপ নিয়ন্ত্রিত)",dhaka:"5,000",other:"5,000"},
+  {cat:"health",sl:"53(খ)",en:"Beauty Parlour (Non-AC)",bn:"বিউটি পার্লার (শীতাতপ নিয়ন্ত্রিত ব্যতিত)",dhaka:"2,000",other:"2,000"},
+  {cat:"health",sl:"54(ক)",en:"Hair Dressing Salon (AC)",bn:"হেয়ার ড্রেসিং সেলুন (শীতাতপ নিয়ন্ত্রিত)",dhaka:"1,500",other:"1,500"},
+  {cat:"health",sl:"54(খ)",en:"Hair Dressing Salon (Non-AC)",bn:"হেয়ার ড্রেসিং সেলুন (শীতাতপ নিয়ন্ত্রণ ব্যতিত)",dhaka:"1,000",other:"1,000"},
+  {cat:"health",sl:"54(গ)",en:"Hair Dressing Salon (Small)",bn:"হেয়ার ড্রেসিং সেলুন (ছোট)",dhaka:"500",other:"500"},
+  {cat:"health",sl:"119(ক)",en:"Pharmacy (Wholesale)",bn:"ফার্মেসী বড় (পাইকারী)",dhaka:"2,500",other:"2,000"},
+  {cat:"health",sl:"119(খ)",en:"Pharmacy (Retail)",bn:"ফার্মেসী ছোট (খুচরা)",dhaka:"1,000",other:"1,000"},
+  {cat:"health",sl:"124(ক)",en:"Private Clinic — 40+ beds",bn:"বেসরকারি স্বাস্থ্য ক্লিনিক — ৪০ শয্যার উর্ধ্ব",dhaka:"35,000",other:"20,000"},
+  {cat:"health",sl:"124(খ)",en:"Private Clinic — 31-40 beds",bn:"বেসরকারি ক্লিনিক — ৩১ থেকে ৪০ শয্যা",dhaka:"20,000",other:"20,000"},
+  {cat:"health",sl:"124(গ)",en:"Private Clinic — 21-30 beds",bn:"বেসরকারি ক্লিনিক — ২১ হতে ৩০ শয্যা",dhaka:"15,000",other:"15,000"},
+  {cat:"health",sl:"124(ঘ)",en:"Private Clinic — 5-20 beds",bn:"বেসরকারি ক্লিনিক — ৫ শয্যা হতে ২০ শয্যা",dhaka:"10,000",other:"10,000"},
+  {cat:"health",sl:"125(ক)",en:"Diagnostic — MRI & CT Scan",bn:"ডায়গনস্টিক এন্ড ইমেজিং (এমআরআই এন্ড সিটি স্ক্যানিং)",dhaka:"20,000",other:"20,000"},
+  {cat:"health",sl:"125(খ)",en:"Diagnostic Lab (Large)",bn:"মেডিকেল ডায়গনস্টিক সেন্টার ল্যাবেরটরী (বড়)",dhaka:"20,000",other:"20,000"},
+  {cat:"health",sl:"125(গ)",en:"Diagnostic Lab (Medium)",bn:"মেডিকেল ডায়গনস্টিক সেন্টার ল্যাবেরটরী (মাঝারী)",dhaka:"10,000",other:"10,000"},
+  {cat:"health",sl:"125(ঘ)",en:"Diagnostic Lab (Small)",bn:"মেডিকেল ডায়গনস্টিক সেন্টার ল্যাবেরটরী (ছোট)",dhaka:"5,000",other:"5,000"},
+  {cat:"health",sl:"150",en:"Health Club / Fitness Club",bn:"হেলথ ক্লাব/ফিটনেস ক্লাব",dhaka:"5,000",other:"5,000"},
+  {cat:"health",sl:"209",en:"Homeo Doctor Practice",bn:"হোমিও ডাক্তার চেয়ার",dhaka:"1,000",other:"1,000"},
+  {cat:"health",sl:"226",en:"Hair Replacement",bn:"হেয়ার রিপ্লেসম্যান্ট",dhaka:"5,000",other:"5,000"},
+  {cat:"health",sl:"261",en:"Herbal Medicine Seller",bn:"হারবাল ঔষধ বিক্রেতা",dhaka:"1,500",other:"1,500"},
+  {cat:"professional",sl:"126",en:"Architecture / Engineering Firm",bn:"স্থাপত্য/প্রকৌশল ফার্ম",dhaka:"5,000",other:"5,000"},
+  {cat:"professional",sl:"127(ক)",en:"Doctor/Dentist — Taxable Income",bn:"প্রকৌশলী, চিকিৎসক, দন্ত চিকিৎসক — আয়কর প্রদানযোগ্য",dhaka:"5,000",other:"5,000"},
+  {cat:"professional",sl:"127(খ)",en:"Doctor/Dentist — Non-taxable Income",bn:"প্রকৌশলী, চিকিৎসক, দন্ত চিকিৎসক — আয়কর প্রদানযোগ্য নয়",dhaka:"2,500",other:"2,500"},
+  {cat:"professional",sl:"128(ক)",en:"Lawyer — Advocate",bn:"আইন ব্যবসায়ী — এ্যাডভোকেট",dhaka:"1,000",other:"1,000"},
+  {cat:"professional",sl:"128(খ)",en:"Solicitor Firm / Legal Advisor",bn:"সিলিসিটর ফার্ম/আইন উপদেষ্টা",dhaka:"2,000",other:"2,000"},
+  {cat:"professional",sl:"186",en:"Call Center",bn:"কল সেন্টার",dhaka:"2,000",other:"2,000"},
+  {cat:"professional",sl:"189",en:"Driver Training Center",bn:"কারিগরি প্রশিক্ষণ/গাড়ি চালক প্রশিক্ষণ সেন্টার",dhaka:"1,000",other:"1,000"},
+  {cat:"professional",sl:"190",en:"Foreign Travel Training Center",bn:"বিদেশ ভ্রমণ প্রশিক্ষণ সেন্টার",dhaka:"1,000",other:"1,000"},
+  {cat:"professional",sl:"192",en:"Event Management",bn:"ইভেন্ট ম্যানেজমেন্ট ব্যবসা",dhaka:"20,000",other:"20,000"},
+  {cat:"professional",sl:"199",en:"Research Center",bn:"রিচার্স সেন্টার",dhaka:"600",other:"600"},
+  {cat:"professional",sl:"200",en:"Media Agent",bn:"মিডিয়া এজেন্ট ব্যবসা",dhaka:"1,000",other:"1,000"},
+  {cat:"professional",sl:"202",en:"Tour Operator",bn:"ট্যুর অপারেটর ব্যবসা",dhaka:"3,000",other:"3,000"},
+  {cat:"professional",sl:"205",en:"Software Company",bn:"সফটওয়্যার নির্মাতা প্রতিষ্ঠান",dhaka:"5,000",other:"5,000"},
+  {cat:"professional",sl:"212",en:"Outsourcing / Manpower Supply",bn:"আউট সোর্সিং জনবল সরবরাহ প্রতিষ্ঠান",dhaka:"5,000",other:"5,000"},
+  {cat:"professional",sl:"216",en:"Private TV Channel",bn:"বেসরকারী টিভি চ্যানেল",dhaka:"20,000",other:"20,000"},
+  {cat:"professional",sl:"217",en:"Rent-A-Car",bn:"রেন্ট-এ-কার",dhaka:"2,000",other:"2,000"},
+  {cat:"professional",sl:"218",en:"Astrologer Practice",bn:"জ্যোতিষের চেয়ার",dhaka:"1,000",other:"1,000"},
+  {cat:"professional",sl:"198",en:"Surveyor Business",bn:"সার্ভেয়ার ব্যবসা",dhaka:"5,000",other:"5,000"},
+  {cat:"professional",sl:"229",en:"Kazi Office",bn:"কাজী অফিস",dhaka:"2,000",other:"2,000"},
+  {cat:"professional",sl:"237",en:"Consultant / Advisor",bn:"পরামর্শদাতা",dhaka:"3,000",other:"3,000"},
+  {cat:"professional",sl:"238",en:"Computer Design Firm",bn:"কম্পিউটার ডিজাইন ফার্ম",dhaka:"750",other:"750"},
+  {cat:"professional",sl:"246",en:"Marketing / Distribution Business",bn:"বাজারজাতকরণ/বিপণন ব্যবসা",dhaka:"5,000",other:"5,000"},
+  {cat:"professional",sl:"250",en:"Telecommunication",bn:"টেলি কমিউনিকেশন",dhaka:"4,000",other:"4,000"},
+  {cat:"professional",sl:"251",en:"Marketing Business",bn:"মার্কেটিং ব্যবসা",dhaka:"3,000",other:"3,000"},
+  {cat:"professional",sl:"253",en:"IT Business",bn:"আইটি ব্যবসা",dhaka:"3,000",other:"3,000"},
+  {cat:"professional",sl:"258",en:"Spiral Binding",bn:"স্পাইরেল বাইন্ডিং",dhaka:"500",other:"500"},
+  {cat:"professional",sl:"260",en:"Pest Control",bn:"পেস্ট কন্ট্রোল",dhaka:"1,500",other:"1,500"},
+  {cat:"professional",sl:"262",en:"Computer Compose",bn:"কম্পিউটার কম্পোজ",dhaka:"1,000",other:"1,000"},
+  {cat:"professional",sl:"264",en:"Visa Processing",bn:"ভিসা প্রসেসিং",dhaka:"10,000",other:"10,000"},
+  {cat:"professional",sl:"272",en:"Airline Ticketing",bn:"বিমানের টিকেটিং ব্যবসা",dhaka:"2,500",other:"2,500"},
+  {cat:"professional",sl:"275",en:"Electronic Media",bn:"ইলেক্টনিক মিডিয়া",dhaka:"1,000",other:"1,000"},
+  {cat:"professional",sl:"276",en:"Print Media",bn:"প্রিন্ট মিডিয়া",dhaka:"1,000",other:"1,000"},
+  {cat:"professional",sl:"281",en:"Graphics Design",bn:"গ্রাফিক্স ডিজাইন",dhaka:"2,000",other:"2,000"},
+  {cat:"professional",sl:"287",en:"News / Information Agency",bn:"তথ্য সরবরাহ/নিউজ এজেন্সি",dhaka:"1,000",other:"1,000"},
+  {cat:"professional",sl:"289",en:"Generator Service",bn:"জেনারেটর সার্ভিস",dhaka:"2,000",other:"2,000"},
+  {cat:"transport",sl:"43(ক)",en:"Carrier/Container Mover/Long Vehicle",bn:"ক্যারিয়ার সার্ভিস/কাভার্ড ভ্যান/লং ভেহিকেল/কন্টেইনার মুভার",dhaka:"10,000",other:"7,500"},
+  {cat:"transport",sl:"43(খ)",en:"Truck/Tanker/Bus (AC)",bn:"ট্রাক/ট্যাংকার/বাস (শীতাতপ নিয়ন্ত্রিত)",dhaka:"500",other:"500"},
+  {cat:"transport",sl:"43(গ)",en:"Truck/Tanker/Bus (Non-AC)",bn:"ট্রাক/ট্যাংকার/বাস (শীতাতপ নিয়ন্ত্রণ ব্যতিত)",dhaka:"300",other:"300"},
+  {cat:"transport",sl:"43(ঘ)",en:"Mini Bus/Mini Truck/Human Hauler",bn:"মিনিবাস/মিনিট্রাক/হিউম্যান হলার",dhaka:"200",other:"200"},
+  {cat:"transport",sl:"43(ঙ)",en:"Microbus",bn:"মাইক্রোবাস",dhaka:"300",other:"300"},
+  {cat:"transport",sl:"43(চ)",en:"Taxi Cab / Car",bn:"ট্যাক্সি ক্যাব/কার",dhaka:"300",other:"300"},
+  {cat:"transport",sl:"43(ছ)",en:"Tempo",bn:"টেম্পু",dhaka:"200",other:"100"},
+  {cat:"transport",sl:"43(জ)",en:"Baby Taxi",bn:"বেবী/ট্যাক্সি",dhaka:"100",other:"100"},
+  {cat:"transport",sl:"43(ঝ)",en:"Mishuk",bn:"মিশুক",dhaka:"100",other:"100"},
+  {cat:"transport",sl:"109(ক)",en:"Motor Vehicle Showroom (Large)",bn:"মটর ভেহিকেল বিক্রেতা/শোরুম (বড়)",dhaka:"5,000",other:"5,000"},
+  {cat:"transport",sl:"109(খ)",en:"Motor Vehicle Showroom (Small)",bn:"মটর ভেহিকেল বিক্রেতা/শোরুম (ছোট)",dhaka:"3,000",other:"3,000"},
+  {cat:"transport",sl:"141",en:"Transport Agency / Contractor",bn:"পরিবহন এজেন্সি/পরিবহন ঠিকাদার",dhaka:"5,000",other:"5,000"},
+  {cat:"transport",sl:"155(খ)",en:"Push Cart (Two-wheel)",bn:"দুই চাকা বিশিষ্ট বাহন (ঠেলাগাড়ি)",dhaka:"100",other:"100"},
+  {cat:"transport",sl:"155(গ)",en:"Three-wheel Vehicle",bn:"তিন চাকা বিশিষ্ট বাহন (ক্যারেজ ভ্যান/বক্স ভ্যান)",dhaka:"200",other:"200"},
+  {cat:"transport",sl:"155(ঘ)",en:"Tally Cart",bn:"টালী গাড়ি",dhaka:"100",other:"100"},
+  {cat:"transport",sl:"155(ঙ)",en:"Horse/Bullock Cart",bn:"ঘোড়ার গাড়ি/গরুর গাড়ি",dhaka:"100",other:"100"},
+  {cat:"transport",sl:"155(চ)",en:"Ricksha/Van Driver License",bn:"রিকশা/ভ্যান ড্রাইভার লাইসেন্স",dhaka:"50",other:"50"},
+  {cat:"transport",sl:"256",en:"CNG Auto Rickshaw",bn:"সিএনজি (অটোরিকশা)",dhaka:"3,000",other:"3,000"},
+  {cat:"transport",sl:"284",en:"Transport Counter",bn:"পরিবহন কাউন্টার",dhaka:"3,000",other:"3,000"},
+  {cat:"misc",sl:"152(ক)",en:"Marriage Certificate — 1st Marriage",bn:"বিবাহ সার্টিফিকেট — প্রথম বিবাহ",dhaka:"100",other:"100"},
+  {cat:"misc",sl:"152(খ)",en:"Marriage Certificate — 2nd (wife alive, with permission)",bn:"২য় বিবাহ — প্রথম স্ত্রীর জীবদ্দশায় কর্তৃপক্ষের অনুমতিক্রমে",dhaka:"5,000",other:"5,000"},
+  {cat:"misc",sl:"152(গ)",en:"Marriage Certificate — 3rd (2 wives alive)",bn:"৩য় বিবাহ — প্রথম দুই স্ত্রীর জীবদ্দশায়",dhaka:"20,000",other:"20,000"},
+  {cat:"misc",sl:"152(ঘ)",en:"Marriage Certificate — 4th (3 wives alive)",bn:"৪র্থ বিবাহ — প্রথম তিন স্ত্রীর জীবদ্দশায়",dhaka:"50,000",other:"50,000"},
+  {cat:"misc",sl:"152(চ)",en:"Adoption — Per Child",bn:"দত্তক গ্রহণের ক্ষেত্রে সন্তান প্রতি",dhaka:"500",other:"500"},
+  {cat:"misc",sl:"153(ক)",en:"Dog Keeping (Annual)",bn:"কুকর পালন (বার্ষিক)",dhaka:"500",other:"500"},
+  {cat:"misc",sl:"153(খ)",en:"Deer Keeping",bn:"হরিণ পালন",dhaka:"1,000",other:"1,000"},
+  {cat:"misc",sl:"153(গ)",en:"Horse Keeping",bn:"ঘোড়া পালন",dhaka:"1,000",other:"1,000"},
+  {cat:"misc",sl:"154",en:"Cinema/Audio Visual Exhibition",bn:"সিনেমা ও অডিও ভিজ্যুয়াল প্রদর্শনী",dhaka:"Max 15%",other:"Max 15%"},
+  {cat:"misc",sl:"156",en:"Fair/Exhibition — Admission Fee",bn:"মেলা, কৃষি প্রদর্শনী ও বাণিজ্যিক জনসমাবেশের ফিস",dhaka:"Max 10%",other:"Max 10%"},
+  {cat:"misc",sl:"157(ক)",en:"Slaughter Fee — Per Goat/Sheep",bn:"পশু জবাই ফি — প্রতিটি ছাগল অথবা ভেড়া",dhaka:"25",other:"25"},
+  {cat:"misc",sl:"157(খ)",en:"Slaughter Fee — Per Cow",bn:"পশু জবাই ফি — প্রতিটি গরু",dhaka:"100",other:"100"},
+  {cat:"misc",sl:"157(গ)",en:"Slaughter Fee — Per Buffalo",bn:"পশু জবাই ফি — প্রতিটি মহিষ",dhaka:"100",other:"100"},
+  {cat:"misc",sl:"164",en:"Objectionable Sound",bn:"আপত্তিজনক শব্দ",dhaka:"1,000",other:"1,000"},
+  {cat:"misc",sl:"176",en:"Shonapapri",bn:"শোনাপাপড়ী",dhaka:"1,000",other:"1,000"},
+  {cat:"misc",sl:"178",en:"Jute Storage (per 37.50 kg)",bn:"পাট মজুদ প্রতি মন (৩৭.৫০ কেজি)",dhaka:"1,000",other:"1,000"},
+  {cat:"misc",sl:"184",en:"Poultry/Dairy Farm",bn:"পোল্ট্রি/ডেয়ারি ফার্ম",dhaka:"2,000",other:"2,000"},
+  {cat:"misc",sl:"191",en:"Dice Repair",bn:"ডাইস মেরামত",dhaka:"1,000",other:"1,000"},
+  {cat:"misc",sl:"224",en:"Ballpen Manufacturing",bn:"বলপেন তৈরী",dhaka:"1,000",other:"1,000"},
+  {cat:"misc",sl:"259",en:"Lock & Key Shop",bn:"তালাচাবি",dhaka:"500",other:"500"},
+  {cat:"misc",sl:"265",en:"Laminating",bn:"লেমেনেটিং",dhaka:"500",other:"500"},
+  {cat:"misc",sl:"270",en:"Rubber Stamp Manufacturing",bn:"রাবার স্ট্যাম্প তৈরী",dhaka:"1,500",other:"1,500"},
+  {cat:"misc",sl:"279",en:"Billiard Room",bn:"বিলিয়ার্ড রুম",dhaka:"1,000",other:"1,000"},
+  {cat:"misc",sl:"295(ক)",en:"Any other business — with income tax",bn:"১-২৯৪ বর্ণিত ব্যতিত — আয়কর প্রদান করা হয়",dhaka:"1,000",other:"1,000"},
+  {cat:"misc",sl:"295(খ)",en:"Any other business — without income tax",bn:"১-২৯৪ বর্ণিত ব্যতিত — আয়কর প্রদান করা হয় না",dhaka:"500",other:"500"},
+  {cat:"misc",sl:"296(ক)",en:"Signboard Tax — per sq. ft.",bn:"সাইনবোর্ড কর — প্রতি বর্গফুট",dhaka:"BDT 80/sq.ft.",other:"BDT 80/sq.ft."},
+  {cat:"misc",sl:"296(খ)",en:"Signboard Surcharge — late renewal (after 30 Sep)",bn:"সাইনবোর্ড কর — সারচার্জ (৩০ সেপ্টেম্বরের পর নবায়ন)",dhaka:"100/month or 10% (whichever higher)",other:"100/month or 10% (whichever higher)"}
+];
+function hl(t,q){if(!q)return t;const r=new RegExp(`(${q.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")})`,"gi");return t.replace(r,"<mark>$1</mark>")}
+function ft(){
+  const q=document.getElementById("si").value.trim().toLowerCase();
+  const c=document.getElementById("cf").value;
+  const tb=document.getElementById("tb"); tb.innerHTML="";
+  let n=0,cur=null;
+  DATA.forEach(r=>{
+    if(c&&r.cat!==c)return;
+    if(q&&!r.en.toLowerCase().includes(q)&&!r.bn.includes(q)&&!r.sl.includes(q))return;
+    if(r.cat!==cur){cur=r.cat;const m=CAT_META[r.cat];const tr=document.createElement("tr");tr.className="cr "+m.cls;tr.innerHTML=`<td colspan="4">${m.i} &nbsp;${m.l}</td>`;tb.appendChild(tr)}
+    n++;
+    const isN=v=>v.match(/^[0-9,]+$/);
+    const fD=isN(r.dhaka)?"BDT "+r.dhaka+"/-":r.dhaka;
+    const fO=isN(r.other)?"BDT "+r.other+"/-":r.other;
+    const sp=!isN(r.dhaka);
+    const tr=document.createElement("tr");tr.className="dr";
+    tr.innerHTML=`<td class="sc">${r.sl}</td><td class="dc">${hl(r.en,q)}<div class="db">${hl(r.bn,q)}</div></td><td class="rc${sp?" sp":""}">${fD}</td><td class="rc${sp?" sp":""}">${fO}</td>`;
+    tb.appendChild(tr);
+  });
+  document.getElementById("rc2").textContent=n+" results";
+  document.getElementById("nr").style.display=n===0?"block":"none";
+  document.getElementById("mt").style.display=n===0?"none":"";
+}
+ft();
+</script>
+</body>
+</html>
